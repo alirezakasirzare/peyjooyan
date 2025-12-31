@@ -128,12 +128,12 @@
   }
 }
 
-.glass {
+.glass-btn {
   position: relative;
   border: none;
 }
 
-.glass::before {
+.glass-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -148,7 +148,7 @@
   border-top-left-radius: 19px;
 }
 
-.glass::after {
+.glass-btn::after {
   content: "";
   position: absolute;
   bottom: 0;

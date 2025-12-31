@@ -146,6 +146,14 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
+"@developer-hub/liquid-glass@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@developer-hub/liquid-glass/-/liquid-glass-1.2.3.tgz#33901e8fd33cc3934a884980438bd294c796811e"
+  integrity sha512-x+GmNCf/ZYDDnqnz9Q8iS4KqoHBle+hRDgSgtA1CNBJnSoaX/Rq5PCxlt+fDZOheO22/2Kl4JxHa5GqJpu/TjQ==
+  dependencies:
+    lodash "^4.17.21"
+    react-draggable "^4.4.6"
+
 "@emnapi/core@^1.4.3", "@emnapi/core@^1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.7.1.tgz#3a79a02dbc84f45884a1806ebb98e5746bdfaac4"
@@ -514,6 +522,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@liquidglass/react@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@liquidglass/react/-/react-0.1.3.tgz#5c947a29b6499e87478c0a5976ad93f4d7f330b9"
+  integrity sha512-tO90pmHmDTQqe+lYacjYaTfH0xnvuA+Bj1h5wq1y1GlDVFvXY3cT6sGLA6lJHYpUReC38FhmV0dyRdwrxx6TWg==
 
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"
@@ -2822,6 +2835,11 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -3156,6 +3174,14 @@ react-dom@19.2.3:
   integrity sha512-yELu4WmLPw5Mr/lmeEpox5rw3RETacE++JgHqQzd2dg+YbJuat3jH4ingc+WPZhxaoFzdv9y33G+F7Nl5O0GBg==
   dependencies:
     scheduler "^0.27.0"
+
+react-draggable@^4.4.6:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-4.5.0.tgz#0b274ccb6965fcf97ed38fcf7e3cc223bc48cdf5"
+  integrity sha512-VC+HBLEZ0XJxnOxVAZsdRi8rD04Iz3SiiKOoYzamjylUcju/hP9np/aZdLHf/7WOD268WMoNJMvYfB5yAK45cw==
+  dependencies:
+    clsx "^2.1.1"
+    prop-types "^15.8.1"
 
 react-is@^16.13.1:
   version "16.13.1"

@@ -6,15 +6,10 @@ import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LandingNavs } from "~/components/layout/landing-navs";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const myFont = localFont({
+  src: "../../../public/fonts/DAVINCI.ttf",
 });
 
 export function generateStaticParams() {
@@ -39,9 +34,7 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
 
   return (
     <html lang={locale} dir={layoutDir}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
-      >
+      <body className={`${myFont.className} antialiased dark`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

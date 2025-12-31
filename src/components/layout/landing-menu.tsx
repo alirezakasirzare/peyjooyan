@@ -1,13 +1,18 @@
+"use client";
+
 import { XIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { Link } from "~/i18n/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGlassContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { useTranslations } from "next-intl";
+import { GlassCard } from "@developer-hub/liquid-glass";
+// import { LiquidGlass } from "@liquidglass/react";
 
 type MenuItemShape = {
   text: string;
@@ -66,15 +71,17 @@ export const LandingMenu = () => {
             </Button>
           </DropdownMenuTrigger>
 
-          <DropdownMenuContent side="left" align="end">
-            {menuItems.map((item) => (
-              <Link href={item.path} key={item.path} replace>
-                <DropdownMenuItem className="cursor-pointer">
-                  {item.text}
-                </DropdownMenuItem>
-              </Link>
-            ))}
-          </DropdownMenuContent>
+          <DropdownMenuGlassContent side="left" align="end">
+            <div>
+              {menuItems.map((item) => (
+                <Link href={item.path} key={item.path} replace>
+                  <DropdownMenuItem className="cursor-pointer text-2xl font-light text-center justify-center">
+                    {item.text}
+                  </DropdownMenuItem>
+                </Link>
+              ))}
+            </div>
+          </DropdownMenuGlassContent>
         </DropdownMenu>
       </div>
     </div>
