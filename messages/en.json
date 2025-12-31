@@ -1,6 +1,14 @@
 {
   "menu": {
-    "home": "Home"
+    "home": "HOME",
+    "aboutUs": "ABOUT US",
+    "mnes": "MNES",
+    "mnerals": "MNERALS",
+    "ceo": "CEO",
+    "founder": "FOUNDER",
+    "news": "NEWS",
+    "articles": "ARTICLES",
+    "contactUs": "CONTACT US"
   },
   "home": {
     "title": "PEYJOOYAN",
