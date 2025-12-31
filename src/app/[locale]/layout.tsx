@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
+import { LandingMenu } from "~/components/layout/landing-menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,12 +35,17 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
 
   setRequestLocale(locale);
 
+  const layoutDir: "rtl" | "ltr" = locale === "fa" ? "rtl" : "ltr";
+
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={layoutDir}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <LandingMenu />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,3 +1,10 @@
 {
-  "test": "test"
+  "menu": {
+    "home": "Home"
+  },
+  "home": {
+    "title": "PEYJOOYAN",
+    "subtitle": "MINNG COMPANY",
+    "cta": "ABOUT US"
+  }
 }
