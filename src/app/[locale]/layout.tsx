@@ -1,5 +1,5 @@
 import "../globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "~/i18n/routing";
@@ -7,6 +7,13 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LandingNavs } from "~/components/layout/landing-navs";
 import localFont from "next/font/local";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 const myFont = localFont({
   src: "../../../public/fonts/DAVINCI.ttf",

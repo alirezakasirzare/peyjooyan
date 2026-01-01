@@ -12,7 +12,10 @@
   },
   "home": {
     "title": "PEYJOOYAN",
-    "subtitle": "MINNG COMPANY",
+    "subtitle": {
+      "left": "MINNG",
+      "right": "COMPANY"
+    },
     "cta": "ABOUT US"
   }
 }

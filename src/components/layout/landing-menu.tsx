@@ -6,13 +6,12 @@ import { Link } from "~/i18n/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGlassContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { useTranslations } from "next-intl";
-import { GlassCard } from "@developer-hub/liquid-glass";
-// import { LiquidGlass } from "@liquidglass/react";
+import { LiquidGlass } from "../sections/liquid-glass";
+import { useIsMobile } from "~/hooks/use-is-mobile";
 
 type MenuItemShape = {
   text: string;
@@ -21,6 +20,8 @@ type MenuItemShape = {
 
 export const LandingMenu = () => {
   const t = useTranslations("menu");
+  const isMobile = useIsMobile();
+
   const menuItems: MenuItemShape[] = [
     {
       text: t("home"),
@@ -61,27 +62,42 @@ export const LandingMenu = () => {
   ];
   return (
     <div className="absolute left-0 bottom-0 w-full h-[100px]">
-      <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
+      <div className="px-6 flex gap-5 justify-end md:justify-center rtl:flex-row-reverse items-center h-full">
         <DropdownMenu open modal={false}>
           <DropdownMenuTrigger>
-            <Button variant={"glass"} size={"icon-lg"} asChild>
+            <Button
+              variant={"glass"}
+              size={"icon-lg"}
+              className="glass-btn"
+              asChild
+            >
               <Link href={"/"} replace>
                 <XIcon className="size-4" />
               </Link>
             </Button>
           </DropdownMenuTrigger>
 
-          <DropdownMenuGlassContent side="left" align="end">
-            <div>
-              {menuItems.map((item) => (
-                <Link href={item.path} key={item.path} replace>
-                  <DropdownMenuItem className="cursor-pointer text-2xl font-light text-center justify-center">
-                    {item.text}
-                  </DropdownMenuItem>
-                </Link>
-              ))}
-            </div>
-          </DropdownMenuGlassContent>
+          <DropdownMenuContent
+            side={isMobile ? "top" : "left"}
+            align="end"
+            sideOffset={10}
+            pureStyle
+          >
+            <LiquidGlass>
+              <div className="flex flex-col gap-2 py-6">
+                {menuItems.map((item) => (
+                  <Link href={item.path} key={item.path} replace>
+                    <DropdownMenuItem
+                      pureStyle
+                      className="outline-none! cursor-pointer md:text-2xl font-light text-center justify-center px-10 py-2"
+                    >
+                      {item.text}
+                    </DropdownMenuItem>
+                  </Link>
+                ))}
+              </div>
+            </LiquidGlass>
+          </DropdownMenuContent>
         </DropdownMenu>
       </div>
     </div>
