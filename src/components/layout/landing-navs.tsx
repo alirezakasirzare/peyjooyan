@@ -21,7 +21,11 @@ export const LandingNavs = () => {
             <LanguagesIcon className="size-4" />
           </Link>
         </Button>
-        <Button variant={"glass"} className="glass-btn font-medium" size={"lg"}>
+        <Button
+          variant={"glass"}
+          className="glass-btn font-medium font-text"
+          size={"lg"}
+        >
           {t("home")}
         </Button>
         <Button

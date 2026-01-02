@@ -19,14 +19,14 @@ export const InitSection = () => {
       <div className="absolute left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh-200px)] bottom-22"></div>
       <div className="absolute left-1/2 bottom-26 -translate-x-1/2 w-full">
         <div className="w-max mx-auto">
-          <h1 className="text-primary text-center font-medium leading-14 md:leading-[0.9] text-6xl md:text-[100px] lg:text-[170px] xl:text-[220px]">
+          <h1 className="text-primary font-title text-center font-medium leading-14 md:leading-[0.9] text-6xl md:text-[100px] lg:text-[170px] xl:text-[220px]">
             {t("title")}
           </h1>
-          <h2 className="flex flex-col md:flex-row items-center justify-center md:gap-6 lg:gap-10">
+          <h2 className="flex flex-col font-title md:flex-row items-center justify-center md:gap-6 lg:gap-10">
             <div className="text-center font-medium leading-20 md:leading-none text-[112px] md:text-[70px] lg:text-[120px] xl:text-[155px]">
               {t("subtitle.left")}
             </div>
-            <div className="text-center font-medium leading-16 md:leading-none text-[74px] md:text-[70px] lg:text-[120px] xl:text-[155px]">
+            <div className="text-center font-title font-medium leading-16 md:leading-none text-[74px] md:text-[70px] lg:text-[120px] xl:text-[155px]">
               {t("subtitle.right")}
             </div>
           </h2>

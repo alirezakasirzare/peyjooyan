@@ -128,6 +128,19 @@
   }
 }
 
+@layer utilities {
+  /* font */
+  .font-title {
+    font-family: var(--font-title);
+  }
+
+  .font-text {
+    font-family: var(--font-text);
+  }
+}
+
+/* glass */
+
 .glass-btn {
   position: relative;
   border: none;

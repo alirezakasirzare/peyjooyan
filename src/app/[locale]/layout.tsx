@@ -1,6 +1,6 @@
 import "../globals.css";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
@@ -15,8 +15,23 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-const myFont = localFont({
+const enTitleFont = localFont({
   src: "../../../public/fonts/DAVINCI.ttf",
+  variable: "--font-title",
+});
+
+const enTextFont = Inter({
+  variable: "--font-text",
+});
+
+const faTitleFont = localFont({
+  src: "../../../public/fonts/Shiveh.woff",
+  variable: "--font-title",
+});
+
+const faTextFont = localFont({
+  src: "../../../public/fonts/Peyda-Regular.ttf",
+  variable: "--font-text",
 });
 
 export function generateStaticParams() {
@@ -38,10 +53,14 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   setRequestLocale(locale);
 
   const layoutDir: "rtl" | "ltr" = locale === "fa" ? "rtl" : "ltr";
+  const titleFont = locale === "fa" ? faTitleFont : enTitleFont;
+  const textFont = locale === "fa" ? faTextFont : enTextFont;
 
   return (
     <html lang={locale} dir={layoutDir}>
-      <body className={`${myFont.className} antialiased dark`}>
+      <body
+        className={`${titleFont.variable} ${textFont.variable} font-text antialiased dark`}
+      >
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
