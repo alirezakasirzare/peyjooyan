@@ -2,65 +2,21 @@
 
 import { XIcon } from "lucide-react";
 import { Button } from "../ui/button";
-import { Link } from "~/i18n/navigation";
+import { Link, useRouter } from "~/i18n/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { useTranslations } from "next-intl";
 import { LiquidGlass } from "../sections/liquid-glass";
 import { useIsMobile } from "~/hooks/use-is-mobile";
-import { useRouter } from "next/navigation";
-
-type MenuItemShape = {
-  text: string;
-  path: string;
-};
+import { useMenu } from "~/hooks/use-menu";
 
 export const LandingMenu = () => {
-  const t = useTranslations("menu");
   const isMobile = useIsMobile();
 
-  const menuItems: MenuItemShape[] = [
-    {
-      text: t("home"),
-      path: "/",
-    },
-    {
-      text: t("aboutUs"),
-      path: "/about-us",
-    },
-    {
-      text: t("mnes"),
-      path: "/mines",
-    },
-    {
-      text: t("mnerals"),
-      path: "/minerals",
-    },
-    {
-      text: t("ceo"),
-      path: "/ceo",
-    },
-    {
-      text: t("founder"),
-      path: "/founder",
-    },
-    {
-      text: t("news"),
-      path: "/news",
-    },
-    {
-      text: t("articles"),
-      path: "/articles",
-    },
-    {
-      text: t("contactUs"),
-      path: "/contact-us",
-    },
-  ];
+  const { items } = useMenu();
 
   const router = useRouter();
   const handleCloseMenu = () => {
@@ -89,11 +45,11 @@ export const LandingMenu = () => {
           >
             <LiquidGlass>
               <div className="flex flex-col gap-2 py-6">
-                {menuItems.map((item) => (
+                {items.map((item) => (
                   <Link href={item.path} key={item.path} replace>
                     <DropdownMenuItem
                       pureStyle
-                      className="outline-none! cursor-pointer md:text-2xl font-light text-center justify-center px-10 py-2"
+                      className="font-title rtl:font-text outline-none! cursor-pointer md:text-2xl font-light text-center justify-center px-10 py-2"
                     >
                       {item.text}
                     </DropdownMenuItem>

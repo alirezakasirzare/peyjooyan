@@ -2,6 +2,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
+import { Link } from "~/i18n/navigation";
 
 export const InitSection = () => {
   const t = useTranslations("home");
@@ -13,11 +14,11 @@ export const InitSection = () => {
         alt="hero"
         width={1200}
         height={800}
-        className="w-full h-[calc(100vh-100px)] object-cover"
+        className="w-full h-screen fixed top-0 left-0 object-cover"
       />
 
-      <div className="absolute left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh-200px)] bottom-22"></div>
-      <div className="absolute left-1/2 bottom-26 -translate-x-1/2 w-full">
+      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh)] bottom-0"></div>
+      <div className="fixed left-1/2 bottom-26 -translate-x-1/2 w-full">
         <div className="w-max mx-auto">
           <h1 className="text-primary font-title text-center font-medium leading-14 md:leading-[0.9] text-6xl md:text-[100px] lg:text-[170px] xl:text-[220px]">
             {t("title")}
@@ -31,7 +32,9 @@ export const InitSection = () => {
             </div>
           </h2>
           <div className="flex gap-4 mt-5">
-            <Button>{t("cta")}</Button>
+            <Button className="font-title rtl:font-text" asChild>
+              <Link href={"/about-us"}>{t("cta")}</Link>
+            </Button>
             <Button size={"icon"}>
               <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
             </Button>

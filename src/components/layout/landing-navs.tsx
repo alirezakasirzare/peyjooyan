@@ -1,15 +1,20 @@
+"use client";
+
 import { LanguagesIcon, MenuIcon } from "lucide-react";
 import { Button } from "../ui/button";
-import { Link } from "~/i18n/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "~/i18n/navigation";
+import { useLocale } from "next-intl";
+import { useMenu } from "~/hooks/use-menu";
 
 export const LandingNavs = () => {
   const currentLocale = useLocale();
-  const t = useTranslations("menu");
   const otherLocale: "fa" | "en" = currentLocale === "en" ? "fa" : "en";
+  const pathname = usePathname();
+
+  const { activeItem } = useMenu();
 
   return (
-    <div className="fixed left-0 bottom-0 w-full h-[100px]">
+    <div className="fixed left-0 bottom-0 w-full h-[100px] z-50">
       <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
         <Button
           variant={"glass"}
@@ -17,7 +22,7 @@ export const LandingNavs = () => {
           className="glass-btn"
           asChild
         >
-          <Link href={"/"} locale={otherLocale}>
+          <Link href={pathname} locale={otherLocale}>
             <LanguagesIcon className="size-4" />
           </Link>
         </Button>
@@ -26,7 +31,7 @@ export const LandingNavs = () => {
           className="glass-btn font-medium font-text"
           size={"lg"}
         >
-          {t("home")}
+          {activeItem?.text}
         </Button>
         <Button
           className="glass-btn"

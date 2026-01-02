@@ -4,9 +4,7 @@ import { InitSection } from "~/components/sections/init-section";
 const HomePage = () => {
   return (
     <>
-      <main className="min-h-screen flex flex-col">
-        <InitSection />
-      </main>
+      <InitSection />
       <LandingNavs />
     </>
   );

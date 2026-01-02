@@ -5,9 +5,7 @@ import { InitSection } from "~/components/sections/init-section";
 const MenuPage = () => {
   return (
     <>
-      <main className="min-h-screen flex flex-col">
-        <InitSection />
-      </main>
+      <InitSection />
 
       <Image
         src={"/images/miner.png"}

@@ -137,8 +137,27 @@
   .font-text {
     font-family: var(--font-text);
   }
+
+  [dir="rtl"] .rtl\:font-text {
+    font-family: var(--font-text);
+  }
+
+  [dir="rtl"] .rtl\:font-title {
+    font-family: var(--font-title);
+  }
+
+  [dir="ltr"] .ltr\:font-text {
+    font-family: var(--font-text);
+  }
+
+  [dir="ltr"] .ltr\:font-title {
+    font-family: var(--font-title);
+  }
 }
 
+.container {
+  @apply mx-auto px-6;
+}
 /* glass */
 .glass-btn {
   position: relative;
