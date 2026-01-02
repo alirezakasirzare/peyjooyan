@@ -9,7 +9,7 @@ export const LandingNavs = () => {
   const otherLocale: "fa" | "en" = currentLocale === "en" ? "fa" : "en";
 
   return (
-    <div className="absolute left-0 bottom-0 w-full h-[100px]">
+    <div className="fixed left-0 bottom-0 w-full h-[100px]">
       <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
         <Button
           variant={"glass"}

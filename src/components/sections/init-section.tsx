@@ -33,7 +33,7 @@ export const InitSection = () => {
           <div className="flex gap-4 mt-5">
             <Button>{t("cta")}</Button>
             <Button size={"icon"}>
-              <ArrowUpRightIcon className="size-4" />
+              <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
             </Button>
           </div>
         </div>

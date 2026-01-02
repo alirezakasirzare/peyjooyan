@@ -12,6 +12,7 @@ import {
 import { useTranslations } from "next-intl";
 import { LiquidGlass } from "../sections/liquid-glass";
 import { useIsMobile } from "~/hooks/use-is-mobile";
+import { useRouter } from "next/navigation";
 
 type MenuItemShape = {
   text: string;
@@ -60,20 +61,23 @@ export const LandingMenu = () => {
       path: "/contact-us",
     },
   ];
+
+  const router = useRouter();
+  const handleCloseMenu = () => {
+    router.back();
+  };
   return (
     <div className="absolute left-0 bottom-0 w-full h-[100px]">
       <div className="px-6 flex gap-5 justify-end md:justify-center rtl:flex-row-reverse items-center h-full">
         <DropdownMenu open modal={false}>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
             <Button
               variant={"glass"}
               size={"icon-lg"}
               className="glass-btn"
-              asChild
+              onClick={handleCloseMenu}
             >
-              <Link href={"/"} replace>
-                <XIcon className="size-4" />
-              </Link>
+              <XIcon className="size-4" />
             </Button>
           </DropdownMenuTrigger>
 
