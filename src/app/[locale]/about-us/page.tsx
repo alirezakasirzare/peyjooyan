@@ -1,9 +1,13 @@
-import { useTranslations } from "next-intl";
+import { Locale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { LandingNavs } from "~/components/layout/landing-navs";
 
-const AboutUsPage = () => {
-  const t = useTranslations("about");
+const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
+  const t = await getTranslations("about");
 
   return (
     <>
