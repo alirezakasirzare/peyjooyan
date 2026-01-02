@@ -9,9 +9,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { LiquidGlass } from "../sections/liquid-glass";
+import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { useIsMobile } from "~/hooks/use-is-mobile";
 import { useMenu } from "~/hooks/use-menu";
+import { LiquidGlassBtnWrapper } from "../sections/liquid-glass-btn-wrapper";
 
 export const LandingMenu = () => {
   const isMobile = useIsMobile();
@@ -26,16 +27,17 @@ export const LandingMenu = () => {
     <div className="absolute left-0 bottom-0 w-full h-[100px]">
       <div className="px-6 flex gap-5 justify-end md:justify-center rtl:flex-row-reverse items-center h-full">
         <DropdownMenu open modal={false}>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant={"glass"}
-              size={"icon-lg"}
-              className="glass-btn"
-              onClick={handleCloseMenu}
-            >
-              <XIcon className="size-4" />
-            </Button>
-          </DropdownMenuTrigger>
+          <LiquidGlassBtnWrapper>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant={"glass"}
+                size={"icon-lg"}
+                onClick={handleCloseMenu}
+              >
+                <XIcon className="size-4" />
+              </Button>
+            </DropdownMenuTrigger>
+          </LiquidGlassBtnWrapper>
 
           <DropdownMenuContent
             side={isMobile ? "top" : "left"}
@@ -43,7 +45,7 @@ export const LandingMenu = () => {
             sideOffset={10}
             pureStyle
           >
-            <LiquidGlass>
+            <LiquidGlassCardWrapper>
               <div className="flex flex-col gap-2 py-6">
                 {items.map((item) => (
                   <Link href={item.path} key={item.path} replace>
@@ -56,7 +58,7 @@ export const LandingMenu = () => {
                   </Link>
                 ))}
               </div>
-            </LiquidGlass>
+            </LiquidGlassCardWrapper>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

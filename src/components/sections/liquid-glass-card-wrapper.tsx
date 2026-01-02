@@ -1,6 +1,10 @@
 import { GlassCard } from "@developer-hub/liquid-glass";
 
-export const LiquidGlass = ({ children }: { children: React.ReactNode }) => {
+export const LiquidGlassCardWrapper = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
     <GlassCard
       displacementScale={30}
