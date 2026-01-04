@@ -24,6 +24,6 @@ export const LeftPanelContent = ({
     className="grow overflow-hidden"
     scrollBarClassName="w-0"
   >
-    <div className="px-6 md:px-10">{children}</div>
+    <div className="px-6 md:px-10 relative">{children}</div>
   </ScrollArea>
 );

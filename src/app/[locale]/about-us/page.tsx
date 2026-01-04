@@ -40,12 +40,13 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             </h3>
           </LeftPanelHeader>
           <LeftPanelContent>
-            <div className="mt-6 text-foreground/80 text-justify font-extralight"></div>
-            <p>{t("text1")}</p>
-            <p>{t("text2")}</p>
-            <p>{t("text3")}</p>
-            <p>{t("text4")}</p>
-            <p>{t("text5")}</p>
+            <div className="text-foreground/80 text-justify font-extralight">
+              <p>{t("text1")}</p>
+              <p>{t("text2")}</p>
+              <p>{t("text3")}</p>
+              <p>{t("text4")}</p>
+              <p>{t("text5")}</p>
+            </div>
 
             <Image
               src={"/images/miner2.png"}
