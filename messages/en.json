@@ -5,7 +5,7 @@
   "menu": {
     "home": "HOME",
     "aboutUs": "ABOUT US",
-    "mnes": "MNES",
+    "mines": "MINES",
     "mnerals": "MNERALS",
     "ceo": "CEO",
     "founder": "FOUNDER",
@@ -30,5 +30,24 @@
     "text3": "Commitment to sustainability: We believe that industrial development must go hand in hand with environmental protection. Our activities are designed with a sustainable approach to leave a valuable and healthy legacy for future generations.",
     "text4": "Commitment to sustainability: We believe that industrial development must go hand in hand with environmental protection. Our activities are designed with a sustainable approach to leave a valuable and healthy legacy for future generations.",
     "text5": "Commitment to sustainability: We believe that industrial development must go hand in hand with environmental protection. Our activities are designed with a sustainable approach to leave a valuable and healthy legacy for future generations."
+  },
+  "mines": {
+    "title": "MINES",
+    "subtitle": "PEYJOOYAN",
+    "subtitle2": "LAK MINING COMPLEX",
+    "text1": "The polymetallic area is located in Qazvin province, about 27 km southwest of the city of Boyin Zahra, with an area of ​​11 km2. This area is part of the Central Iran structural zone and the Urmia magmatic belt.",
+    "text2": "Deposit specifications",
+    "text3": "Mineralization type: Polymetallic lead, zinc, gold, silver, copper",
+    "text4": "Ores parageneses: Galena, sphalerite, chalcopyrite, chalcocite, pyrite, malachite, lead and zinc oxide",
+    "text5": "Gange type: Silica, barite, iron oxides and hydroxides",
+    "text6": "Geochemical parageneses: Zn, Pb, Mo, Cu, Sb, As, Ag, Auinc, gold, silver, copper",
+    "text7": "Ores parageneses: Galena, sphalerite, chalcopyrite, chalcocite, pyrite, malachite, lead and zinc oxide",
+    "text8": "Gange type: Silica, barite, iron oxides and hydroxides",
+    "text9": "Geochemical parageneses: Zn, Pb, Mo, Cu, Sb, As, Ag, Au",
+    "text10": "Geochemical parageneses: Zn, Pb, Mo, Cu, Sb, As, Ag, Auinc, gold, silver, copper",
+    "text11": "Ores parageneses: Galena, sphalerite, chalcopyrite, chalcocite, pyrite, malachite, lead and zinc oxide",
+    "text12": "Gange type: Silica, barite, iron oxides and hydroxides",
+    "text13": "Geochemical parageneses: Zn, Pb, Mo, Cu, Sb, As, Ag, Au",
+    "cta": "READ MORE"
   }
 }

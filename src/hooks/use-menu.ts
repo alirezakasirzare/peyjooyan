@@ -20,7 +20,7 @@ export const useMenu = () => {
       path: "/about-us",
     },
     {
-      text: t("mnes"),
+      text: t("mines"),
       path: "/mines",
     },
     {
