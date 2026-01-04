@@ -6,6 +6,7 @@ import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
+import { LayoutProvider } from "./layout-provider";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -62,7 +63,9 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
       <body
         className={`${titleFont.variable} ${textFont.variable} font-text antialiased dark h-screen overflow-hidden`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <LayoutProvider dir={layoutDir}>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </LayoutProvider>
       </body>
     </html>
   );

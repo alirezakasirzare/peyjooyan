@@ -16,8 +16,8 @@ const Step1 = () => {
 
   return (
     <>
-      <div className="absolute left-0 bottom-0 -z-10 w-full">
-        <div className="ps-20 flex justify-center mb-2">
+      <div className="md:absolute left-0 bottom-0 -z-10 w-full pt-8 md:pt-0">
+        <div className="px-10 md:pe-0 md:ps-20 flex justify-center mb-2">
           <h3 className="text-primary text-[34px] font-title leading-none">
             {t("title")}
           </h3>
@@ -32,7 +32,7 @@ const Step1 = () => {
 
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
           <Button
-            className="rounded-md px-20 font-title"
+            className="rounded-md px-20 font-title rtl:font-text"
             size={"lg"}
             onClick={handleClickCTA}
           >
@@ -57,17 +57,17 @@ const Step2 = () => {
         alt="miner"
         width={1200}
         height={800}
-        className="w-full absolute left-0 bottom-0 -z-10"
+        className="w-screen md:w-full md:absolute left-0 bottom-0 -z-10"
       />
       <div className="absolute bottom-4 left-0">
-        <div className="flex justify-center px-20">
+        <div className="flex justify-center px-8 md:px-20">
           <h3 className="text-white text-[34px] font-title leading-none">
             {t("title")}
           </h3>
         </div>
         <div className="flex justify-center mt-8">
           <Button
-            className="rounded-md px-20 font-title"
+            className="rounded-md px-20 font-title rtl:font-text"
             size={"lg"}
             onClick={handleClickCTA}
           >
@@ -82,19 +82,20 @@ const Step2 = () => {
 export const MinesPopupSection = () => {
   const { step } = useStore(MinesStore);
 
-  if (step === 0) return null;
-
   const steps = {
+    0: () => <></>,
     1: Step1,
     2: Step2,
   } as const;
 
   const CurrentStep = steps[step];
 
-  if (!CurrentStep) return null;
+  const handleCloseSheet = () => {
+    MinesStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 }));
+  };
 
   return (
-    <RightPanel>
+    <RightPanel isOpen={step > 0} onCloseMobile={handleCloseSheet}>
       <CurrentStep />
     </RightPanel>
   );

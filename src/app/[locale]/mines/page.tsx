@@ -8,7 +8,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { RightPanel } from "~/components/common/right-panel";
 import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
 import { ReadMoreBtn } from "./read-more-btn";
@@ -71,7 +70,7 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
 
             <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
 
-            <div className="flex gap-4 absolute bottom-10 start-1/2 -translate-x-1/2">
+            <div className="flex gap-4 absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2">
               <ReadMoreBtn />
               <Button size={"icon"}>
                 <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
