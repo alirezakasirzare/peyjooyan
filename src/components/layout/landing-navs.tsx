@@ -5,7 +5,6 @@ import { Button } from "../ui/button";
 import { Link, usePathname } from "~/i18n/navigation";
 import { useLocale } from "next-intl";
 import { useMenu } from "~/hooks/use-menu";
-import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { LiquidGlassBtnWrapper } from "../sections/liquid-glass-btn-wrapper";
 
 export const LandingNavs = () => {
@@ -16,7 +15,7 @@ export const LandingNavs = () => {
   const { activeItem } = useMenu();
 
   return (
-    <div className="fixed left-0 bottom-0 w-full h-[100px] z-50">
+    <div className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 w-min">
       <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
         <LiquidGlassBtnWrapper>
           <Button variant={"glass"} size={"icon-lg"} asChild>

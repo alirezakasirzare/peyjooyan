@@ -7,8 +7,12 @@ import {
   LeftPanelContent,
   LeftPanelHeader,
 } from "~/components/common/left-panel";
+import { PanelContainer } from "~/components/common/panel-container";
+import { RightPanel } from "~/components/common/right-panel";
 import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
+import { ReadMoreBtn } from "./read-more-btn";
+import { MinesPopupSection } from "./mines-popup-section";
 
 const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
   const { locale } = await params;
@@ -23,12 +27,12 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
         alt="about"
         width={1200}
         height={800}
-        className="w-full h-full object-cover fixed top-0 left-0"
+        className="w-full h-full object-cover fixed top-0 left-0 -z-10"
       />
 
-      <div className="fixed left-0 top-0 bg-linear-to-l from-black to-black/0 w-full h-full bottom-22"></div>
+      <div className="fixed left-0 top-0 bg-linear-to-l from-black to-black/0 w-full h-full bottom-22 -z-10"></div>
 
-      <div className="relative z-10 container">
+      <PanelContainer>
         <LeftPanel>
           <LeftPanelHeader>
             <h2 className="font-title text-[60px] md:text-[120px] leading-none">
@@ -65,17 +69,19 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
               className="mx-auto w-1/3"
             />
 
-            <div className="flex gap-4 absolute bottom-10 start-50">
-              <Button className="font-title rtl:font-text">{t("cta")}</Button>
+            <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
+
+            <div className="flex gap-4 absolute bottom-10 start-1/2 -translate-x-1/2">
+              <ReadMoreBtn />
               <Button size={"icon"}>
                 <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
               </Button>
             </div>
           </LeftPanelContent>
         </LeftPanel>
-      </div>
 
-      <div className="fixed left-0 right-0 bottom-0 h-[120px] z-20 bg-linear-to-t from-black/75 via-black/60 to-transparent" />
+        <MinesPopupSection />
+      </PanelContainer>
 
       <LandingNavs />
     </>

@@ -60,7 +60,7 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   return (
     <html lang={locale} dir={layoutDir}>
       <body
-        className={`${titleFont.variable} ${textFont.variable} font-text antialiased dark`}
+        className={`${titleFont.variable} ${textFont.variable} font-text antialiased dark h-screen overflow-hidden`}
       >
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

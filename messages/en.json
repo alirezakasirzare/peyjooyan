@@ -48,6 +48,14 @@
     "text11": "Ores parageneses: Galena, sphalerite, chalcopyrite, chalcocite, pyrite, malachite, lead and zinc oxide",
     "text12": "Gange type: Silica, barite, iron oxides and hydroxides",
     "text13": "Geochemical parageneses: Zn, Pb, Mo, Cu, Sb, As, Ag, Au",
-    "cta": "READ MORE"
+    "cta": "READ MORE",
+    "step1": {
+      "title": "DO YOU WANT TO KNOW ABOUT PEYJOOYAN MINES?",
+      "cta": "START"
+    },
+    "step2": {
+      "title": "SO YOU WANT TO READ ABOUT THE LAK MINE?",
+      "cta": "YES"
+    }
   }
 }

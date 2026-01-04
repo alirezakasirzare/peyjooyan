@@ -1,7 +1,7 @@
 import { ScrollArea } from "../ui/scroll-area";
 
 export const LeftPanel = ({ children }: { children: React.ReactNode }) => (
-  <div className="w-160 max-w-full py-6 md:py-10 flex flex-col h-screen">
+  <div className="w-160 max-w-full pt-6 md:pt-10 flex flex-col max-h-screen relative z-50">
     {children}
   </div>
 );
