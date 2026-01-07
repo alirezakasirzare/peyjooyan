@@ -35,6 +35,8 @@ export const RightPanel = ({
     );
   }
 
+  if (!isOpen) return null;
+
   return (
     <div className="w-110 max-w-full pt-6 md:pt-10">
       <div className="relative z-50 h-full">{children}</div>

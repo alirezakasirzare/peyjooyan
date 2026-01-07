@@ -1,7 +1,19 @@
+import { cn } from "~/lib/utils";
 import { ScrollArea } from "../ui/scroll-area";
 
-export const LeftPanel = ({ children }: { children: React.ReactNode }) => (
-  <div className="w-160 max-w-full pt-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50">
+export const LeftPanel = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <div
+    className={cn(
+      "w-160 max-w-full pt-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50",
+      className
+    )}
+  >
     {children}
   </div>
 );
