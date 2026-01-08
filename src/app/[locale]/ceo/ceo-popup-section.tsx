@@ -17,8 +17,8 @@ const Step1 = () => {
   return (
     <>
       <div className="md:absolute left-0 bottom-0 -z-10 w-full pt-8 md:pt-0">
-        <div className="px-10 md:ps-10 md:pe-28 flex justify-center -mb-14">
-          <h3 className="text-primary text-[34px] font-title leading-none">
+        <div className="px-10 md:ps-10 md:pe-28 flex justify-center md:-mb-14">
+          <h3 className="text-primary text-[28px] md:text-[34px] font-title leading-none">
             {t("title")}
           </h3>
         </div>
@@ -61,7 +61,7 @@ const Step2 = () => {
       />
       <div className="absolute bottom-4 left-0">
         <div className="flex justify-center px-8 md:px-20">
-          <h3 className="text-white text-[34px] font-title leading-none">
+          <h3 className="text-white text-[28px] md:text-[34px] font-title leading-none">
             {t("title")}
           </h3>
         </div>

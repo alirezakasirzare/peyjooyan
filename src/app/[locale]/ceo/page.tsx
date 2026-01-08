@@ -59,7 +59,7 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
             <h2 className="font-title text-[60px] md:text-[90px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-lg md:text-[60px] text-primary leading-none">
+            <h1 className="font-title text-lg md:text-[60px] rtl:md:text-[30px] text-primary leading-none">
               {t("subtitle")}
             </h1>
             <h3 className="font-title text-lg md:text-xl leading-none mt-3">
