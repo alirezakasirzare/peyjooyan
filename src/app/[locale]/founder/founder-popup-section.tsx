@@ -3,15 +3,16 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "~/components/ui/button";
-import { CeoStore } from "./ceo-store";
+import { FounderStore } from "./founder-store";
 import { RightPanel } from "~/components/common/right-panel";
 import { useStore } from "@tanstack/react-store";
+import { PlayIcon, UserIcon } from "lucide-react";
 
 const Step1 = () => {
-  const t = useTranslations("ceo.step1");
+  const t = useTranslations("founder.step1");
 
   const handleClickCTA = () => {
-    CeoStore.setState({ step: 2 });
+    FounderStore.setState({ step: 2 });
   };
 
   return (
@@ -23,7 +24,7 @@ const Step1 = () => {
           </h3>
         </div>
         <Image
-          src={"/images/miner7.png"}
+          src={"/images/founder.png"}
           alt="miner"
           width={1200}
           height={800}
@@ -45,25 +46,21 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const t = useTranslations("ceo.step2");
+  const t = useTranslations("founder.step2");
   const handleClickCTA = () => {
-    CeoStore.setState({ step: 0 });
+    FounderStore.setState({ step: 0 });
   };
 
   return (
     <>
-      <Image
-        src={"/images/miner5.png"}
-        alt="miner"
-        width={1200}
-        height={800}
-        className="w-screen md:w-full md:absolute left-0 bottom-0 -z-10"
-      />
-      <div className="absolute bottom-4 left-0">
-        <div className="flex justify-center px-8 md:px-20">
-          <h3 className="text-white text-[28px] md:text-[34px] font-title leading-none">
+      <div className="absolute bottom-4 left-0 h-full flex flex-col">
+        <div className="flex justify-center px-8 md:px-20 mb-auto">
+          <h3 className="text-primary text-[28px] md:text-[34px] font-title leading-none">
             {t("title")}
           </h3>
+        </div>
+        <div className="h-40 bg-white text-primary rounded-lg flex justify-center items-center">
+          <PlayIcon color="size-6" fill="red" />
         </div>
         <div className="flex justify-center mt-8">
           <Button
@@ -79,11 +76,11 @@ const Step2 = () => {
   );
 };
 
-export const CeoPopupSection = () => {
-  const { step } = useStore(CeoStore);
+export const FounderPopupSection = () => {
+  const { step } = useStore(FounderStore);
 
   const handleCloseSheet = () => {
-    CeoStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 | 2 }));
+    FounderStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 | 2 }));
   };
 
   const steps = {

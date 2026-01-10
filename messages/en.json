@@ -72,6 +72,27 @@
     "step1": {
       "title": "DO YOU WANT TO READ ABOUT THE CEO?",
       "cta": "START"
+    },
+    "step2": {
+      "title": "SO YOU WANT TO READ ABOUT THE LAK MINE?",
+      "cta": "YES"
+    }
+  },
+  "founder": {
+    "title": "FOUNDER",
+    "subtitle": "DR ALI POURSALEH",
+    "readMore": "READ MORE",
+    "text1": "Mr. Poursaleh, one of the most prominent and influential figures in the history of Iran’s mining industry, dedicated his life to the development of the country’s underground resources. Born in 1961, he entered the field of entrepreneurship with a bold vision.",
+    "text2": "With a deep understanding of the enormous potential of domestic reserves, he founded the Yazd Peijoyan Mining Company in 2017. His goal went beyond mere extraction; he sought to create a complete value chain, from exploration to final processing.",
+    "text3": "Mr. Poursaleh’s most important achievement was the management and development of large mining projects, the most notable of which was the activation of the large [fictitious mine name] mine, which became one of the production hubs of [metal name] in the region. The advanced industrial infrastructure and factories that he established not only strengthened national production, but also provided extensive employment for residents of deprived areas.",
+    "text4": "Mr. Poursaleh left behind a valuable legacy with a committed approach to sustainable development and human resources. His memory as a pioneer and supporter of the country's mining development will forever remain in the industry.",
+    "step1": {
+      "title": "FOUNDER OF PEYJOOYAN MINING COMPANY",
+      "cta": "START"
+    },
+    "step2": {
+      "title": "TO VIEW THE BIOGRAPHY OF THE FOUNDER OF PEYJOOYAN YAZD, WATCH THE VIDEO BELOW.",
+      "cta": "RETURN"
     }
   }
 }
