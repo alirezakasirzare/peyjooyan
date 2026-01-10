@@ -12,7 +12,6 @@ import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
 import { FounderCta } from "./founder-cta";
 import { FounderPopupSection } from "./founder-popup-section";
-import { RightPanel } from "~/components/common/right-panel";
 
 const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
   const { locale } = await params;
