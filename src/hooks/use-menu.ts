@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
 import { usePathname } from "~/i18n/navigation";
 
-type MenuItemShape = {
+export type MenuItemShape = {
   text: string;
   path: string;
+  hide?: boolean;
 };
 
 export const useMenu = () => {
@@ -46,6 +47,11 @@ export const useMenu = () => {
     {
       text: t("contactUs"),
       path: "/contact-us",
+    },
+    {
+      text: t("footer"),
+      path: "/footer",
+      hide: true,
     },
   ];
 

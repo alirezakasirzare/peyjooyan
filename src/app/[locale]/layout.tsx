@@ -6,8 +6,9 @@ import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
-import { LayoutProvider } from "./layout-provider";
+import { LayoutProvider } from "../../components/providers/layout-provider";
 import { LandingMenu } from "~/components/layout/landing-menu";
+import { MenuScrollProvider } from "~/components/providers/menu-scroll-provider";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -66,8 +67,7 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
       >
         <LayoutProvider dir={layoutDir}>
           <NextIntlClientProvider>
-            {children}
-
+            <MenuScrollProvider>{children}</MenuScrollProvider>
             <LandingMenu />
           </NextIntlClientProvider>
         </LayoutProvider>

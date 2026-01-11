@@ -53,20 +53,22 @@ export const Menu = () => {
           >
             <LiquidGlassCardWrapper>
               <div className="flex flex-col gap-2 py-6">
-                {items.map((item) => (
-                  <Link
-                    href={item.path}
-                    key={item.path}
-                    onClick={handleCloseMenu}
-                  >
-                    <DropdownMenuItem
-                      pureStyle
-                      className="font-title rtl:font-text outline-none! cursor-pointer md:text-2xl font-light text-center justify-center px-10 py-2"
+                {items
+                  .filter((item) => !item.hide)
+                  .map((item) => (
+                    <Link
+                      href={item.path}
+                      key={item.path}
+                      onClick={handleCloseMenu}
                     >
-                      {item.text}
-                    </DropdownMenuItem>
-                  </Link>
-                ))}
+                      <DropdownMenuItem
+                        pureStyle
+                        className="font-title rtl:font-text outline-none! cursor-pointer md:text-2xl font-light text-center justify-center px-10 py-2"
+                      >
+                        {item.text}
+                      </DropdownMenuItem>
+                    </Link>
+                  ))}
               </div>
             </LiquidGlassCardWrapper>
           </DropdownMenuContent>
