@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Button } from "~/components/ui/button";
+import { CardSheet } from "~/components/ui/card-sheet";
 import pureDate from "~/data/articles.json";
 
 const data = {
@@ -13,15 +14,17 @@ export const ArticleList = () => {
   const articles = data[locale];
 
   return (
-    <ul className="grid grid-cols-2 gap-x-4 gap-y-8">
+    <ul className="grid grid-cols-2 gap-4">
       {articles.map((article) => (
         <li key={article.id}>
-          <div className="bg-[#1F2324] rounded-3xl p-4 text-[36px] font-title flex leading-none card-bottom-sheet">
-            <h6>{article.title}</h6>
-            <Button size={"icon"}>
-              <ArrowUpRightIcon className="size-4 fill-primary" />
-            </Button>
-          </div>
+          <CardSheet>
+            <div className="flex">
+              <h6 className="font-title">{article.title}</h6>
+              <Button size={"icon"}>
+                <ArrowUpRightIcon className="size-4 fill-primary" />
+              </Button>
+            </div>
+          </CardSheet>
         </li>
       ))}
     </ul>

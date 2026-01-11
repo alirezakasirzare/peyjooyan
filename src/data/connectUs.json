@@ -1,0 +1,38 @@
+{
+  "enConnectUs": [
+    {
+      "id": 1,
+      "title": "CEO"
+    },
+    {
+      "id": 2,
+      "title": "CEO"
+    },
+    {
+      "id": 3,
+      "title": "CEO"
+    },
+    {
+      "id": 4,
+      "title": "CEO"
+    }
+  ],
+  "faArticles": [
+    {
+      "id": 1,
+      "title": "مدیر عامل"
+    },
+    {
+      "id": 2,
+      "title": "مدیر عامل"
+    },
+    {
+      "id": 3,
+      "title": "مدیر عامل"
+    },
+    {
+      "id": 4,
+      "title": "مدیر عامل"
+    }
+  ]
+}

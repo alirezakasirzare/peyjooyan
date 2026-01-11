@@ -99,5 +99,10 @@
     "title": "ARTICLES",
     "subtitle": "LATEST ARTICLES",
     "readMore": "READ MORE"
+  },
+  "connectUs": {
+    "title": "CONNECT",
+    "subtitle": "WITH PEYJOOYAN",
+    "requestBtn": "REQUEST"
   }
 }
