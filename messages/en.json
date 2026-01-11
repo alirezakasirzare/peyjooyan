@@ -104,5 +104,13 @@
     "title": "CONNECT",
     "subtitle": "WITH PEYJOOYAN",
     "requestBtn": "REQUEST"
+  },
+  "footer": {
+    "title": "FOOTER",
+    "subtitle": "PEYJOOYAN",
+    "addressTitle": "HEAD OFFICE ADDRESS",
+    "emailTitle": "EMAIL",
+    "contactTitle": "CONTACT",
+    "linkedinTitle": "LINKEDIN"
   }
 }
