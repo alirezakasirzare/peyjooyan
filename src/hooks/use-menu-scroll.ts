@@ -1,6 +1,8 @@
 import { usePathname, useRouter } from "~/i18n/navigation";
 import { useWheelTime } from "./use-wheel-time";
 import { MenuItemShape, useMenu } from "./use-menu";
+import { menuStore } from "~/store/menu-store";
+import { scrollStore } from "~/store/scroll-store";
 
 export const findNextPrevPathname = (
   items: MenuItemShape[],
@@ -31,6 +33,7 @@ export const useMenuScroll = () => {
   const router = useRouter();
 
   useWheelTime((to) => {
+    if (scrollStore.state.isMouseInScrollableView) return;
     const { prev, next } = findNextPrevPathname(items, pathname);
 
     if (to === "top" && prev) {
