@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
 import { LayoutProvider } from "./layout-provider";
+import { LandingMenu } from "~/components/layout/landing-menu";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -64,7 +65,11 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
         className={`${titleFont.variable} ${textFont.variable} font-text antialiased dark h-screen overflow-hidden`}
       >
         <LayoutProvider dir={layoutDir}>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            {children}
+
+            <LandingMenu />
+          </NextIntlClientProvider>
         </LayoutProvider>
       </body>
     </html>

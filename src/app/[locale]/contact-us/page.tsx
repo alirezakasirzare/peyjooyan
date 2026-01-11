@@ -7,7 +7,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { ConnectUsList } from "./connect-us-list";
 
 const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
@@ -45,8 +44,6 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           </LeftPanelContent>
         </LeftPanel>
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

@@ -8,7 +8,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
 import { FounderCta } from "./founder-cta";
 import { FounderPopupSection } from "./founder-popup-section";
@@ -65,8 +64,6 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
 
         <FounderPopupSection />
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

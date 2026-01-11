@@ -7,7 +7,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { ContactList } from "./contact-list";
 
 const FooterPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
@@ -43,8 +42,6 @@ const FooterPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           </LeftPanelContent>
         </LeftPanel>
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

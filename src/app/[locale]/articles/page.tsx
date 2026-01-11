@@ -1,15 +1,8 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import Image from "next/image";
-import {
-  LeftPanel,
-  LeftPanelContent,
-  LeftPanelHeader,
-} from "~/components/common/left-panel";
+import { LeftPanel, LeftPanelHeader } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { RightPanel } from "~/components/common/right-panel";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
 import { ArticleList } from "./article-list";
 
@@ -48,8 +41,6 @@ const ArticlesPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
         </div>
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

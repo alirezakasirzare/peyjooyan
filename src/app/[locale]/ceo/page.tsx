@@ -7,9 +7,7 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { CeoPopupSection } from "./ceo-popup-section";
-import { Button } from "~/components/ui/button";
 import { CeoCta } from "./ceo-cta";
 
 const SocialMedia = () => {
@@ -83,8 +81,6 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
         </LeftPanel>
         <CeoPopupSection />
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

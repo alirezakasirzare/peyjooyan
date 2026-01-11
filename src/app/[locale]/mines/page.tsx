@@ -8,7 +8,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 import { Button } from "~/components/ui/button";
 import { ReadMoreBtn } from "./read-more-btn";
 import { MinesPopupSection } from "./mines-popup-section";
@@ -81,8 +80,6 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
 
         <MinesPopupSection />
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };

@@ -7,7 +7,6 @@ import {
   LeftPanelHeader,
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
-import { LandingNavs } from "~/components/layout/landing-navs";
 
 const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
   const { locale } = await params;
@@ -61,8 +60,6 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           </LeftPanelContent>
         </LeftPanel>
       </PanelContainer>
-
-      <LandingNavs />
     </>
   );
 };
