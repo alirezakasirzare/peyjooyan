@@ -17,6 +17,7 @@ import { useStore } from "@tanstack/react-store";
 import { menuStore } from "~/store/menu-store";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export const Menu = () => {
   const isMobile = useIsMobile();
@@ -124,7 +125,18 @@ export const LandingMenu = () => {
   const { isOpen } = useStore(menuStore);
 
   if (isOpen) {
-    return <Menu />;
+    return (
+      <div>
+        <Image
+          src={"/images/miner.png"}
+          alt="hero"
+          width={1200}
+          height={800}
+          className="absolute left-0 bottom-0 w-[55vw] md:w-[28vw] z-500"
+        />
+        <Menu />
+      </div>
+    );
   }
 
   return <LandingNavs />;
