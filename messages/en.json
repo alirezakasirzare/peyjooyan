@@ -59,6 +59,28 @@
       "cta": "YES"
     }
   },
+  "minerals": {
+    "title": "MINERALS",
+    "subtitle": "PEYJOOYAN",
+    "subtitle2": "THE MINERALS WE EXTRACT",
+    "rockText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY.",
+    "readMoreBtn": "READ MORE",
+    "steps": ["LEAD AND ZINC", "COPPER", "INDUSTRIAL SOIL", "POLYMETAL MINE"],
+    "step1": {
+      "title": "LEAD AND ZINC",
+      "text1": "What sets us apart (main pillars of activity): Complete production chain: Our expertise starts from the precise exploration of metal deposits and continues to safe extraction and intelligent processing, including the production of high-purity 18% copper concentrate. We take responsibility for the entire process.",
+      "text2": "Quality and standards: Each of our products is the result of applying the latest geological technologies and a commitment to the strictest quality standards, which guarantees the sustainability of your industrial production.",
+      "text3": "Commitment to sustainability: We believe that industrial development must go hand in hand with environmental protection. Our activities are designed with a sustainable approach to leave a valuable and healthy legacy for future generations.What sets us apart (main pillars of activity):",
+      "text4": "Complete production chain: Our expertise starts from the precise exploration of metal deposits and continues to safe extraction and intelligent processing, including the production of high-purity 18% copper concentrate. We take responsibility for the entire process.",
+      "text5": "Quality and standards: Each of our products is the result of applying the latest geological technologies and a commitment to the strictest quality standards, which guarantees the sustainability of your industrial production.",
+      "text6": "Commitment to sustainability: We believe that industrial development must go hand in hand with environmental protection. Our activities are designed with a sustainable approach to leave a valuable and healthy legacy for future generations.",
+      "cta": "VIEW IMAGES"
+    },
+    "step2": {
+      "title": "LEAD AND ZINC",
+      "cta": "VIEW IMAGES"
+    }
+  },
   "ceo": {
     "title": "CEO",
     "subtitle": "SOROUSH POURSALEH",

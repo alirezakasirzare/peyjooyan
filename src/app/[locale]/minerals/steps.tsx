@@ -1,6 +1,8 @@
 import { ArrowUpRightIcon } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
+import { ReadMoreBtn } from "./read-more-btn";
 
 type NonActiveStepShape = {
   isActive: false;
@@ -14,13 +16,15 @@ type ActiveStepShape = {
 
 type StepShape = { title: string } & (NonActiveStepShape | ActiveStepShape);
 
-const Step = (
+const Step = async (
   data: StepShape & {
     number: number;
     isFirst?: boolean;
     isLast?: boolean;
   },
 ) => {
+  const t = await getTranslations("minerals");
+
   return (
     <li
       className={cn(
@@ -32,9 +36,7 @@ const Step = (
     >
       {data.isActive && (
         <div className="w-10 absolute left-26 top-0 flex flex-row gap-2">
-          <Button size={"sm"} variant={"secondary"} className="rounded-full">
-            Read More
-          </Button>
+          <ReadMoreBtn />
           <Button
             size={"icon-sm"}
             className="rounded-full"
@@ -70,17 +72,18 @@ const Step = (
   );
 };
 
-export const Steps = () => {
+export const Steps = async () => {
+  const t = await getTranslations("minerals");
   const items: StepShape[] = [
     {
-      title: "Lead and zinc",
+      title: t("steps.0"),
       isActive: true,
       moreLink: "/",
       onAction: () => {},
     },
-    { title: "Copper", isActive: false },
-    { title: "Industrial soil", isActive: false },
-    { title: "Polymetal Mine", isActive: false },
+    { title: t("steps.1"), isActive: false },
+    { title: t("steps.2"), isActive: false },
+    { title: t("steps.3"), isActive: false },
   ];
   return (
     <ul className="flex">
