@@ -20,7 +20,7 @@ export const CeoCta = () => {
       <div className="fixed top-0 md:top-auto md:bottom-0 end-0 z-51 md:z-auto">
         <div className="relative">
           <Image
-            src={"/images/ceo.png"}
+            src={"/images/ceo.gif"}
             alt="ceo"
             width={1200}
             height={800}

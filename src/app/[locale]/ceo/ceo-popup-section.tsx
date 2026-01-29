@@ -11,7 +11,7 @@ const Step1 = () => {
   const t = useTranslations("ceo.step1");
 
   const handleClickCTA = () => {
-    CeoStore.setState({ step: 2 });
+    CeoStore.setState({ step: 0 });
   };
 
   return (
@@ -44,52 +44,16 @@ const Step1 = () => {
   );
 };
 
-const Step2 = () => {
-  const t = useTranslations("ceo.step2");
-  const handleClickCTA = () => {
-    CeoStore.setState({ step: 0 });
-  };
-
-  return (
-    <>
-      <Image
-        src={"/images/miner5.png"}
-        alt="miner"
-        width={1200}
-        height={800}
-        className="w-screen md:w-full md:absolute left-0 bottom-0 -z-10"
-      />
-      <div className="absolute bottom-4 left-0">
-        <div className="flex justify-center px-8 md:px-20">
-          <h3 className="text-white text-[28px] md:text-[34px] font-title leading-none">
-            {t("title")}
-          </h3>
-        </div>
-        <div className="flex justify-center mt-8">
-          <Button
-            className="rounded-md px-20 font-title rtl:font-text"
-            size={"lg"}
-            onClick={handleClickCTA}
-          >
-            {t("cta")}
-          </Button>
-        </div>
-      </div>
-    </>
-  );
-};
-
 export const CeoPopupSection = () => {
   const { step } = useStore(CeoStore);
 
   const handleCloseSheet = () => {
-    CeoStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 | 2 }));
+    CeoStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 }));
   };
 
   const steps = {
     0: () => <></>,
     1: Step1,
-    2: Step2,
   } as const;
 
   const CurrentStep = steps[step];
