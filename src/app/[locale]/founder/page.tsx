@@ -20,15 +20,18 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
 
   return (
     <>
-      <Image
-        src={"/images/founder.png"}
-        alt="founder"
-        width={1200}
-        height={800}
-        className="object-cover absolute bottom-0 right-0 w-100"
-      />
+      <div>
+        <Image
+          src={"/images/founder.gif"}
+          alt="founder"
+          width={1200}
+          height={800}
+          className="absolute top-0 md:top-auto md:bottom-0 right-0 w-80 md:w-160"
+        />
+        <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
+      </div>
 
-      <div className="fixed right-0 top-0 bg-linear-to-r from-black to-black/0 w-100 h-full"></div>
+      <div className="fixed right-0 top-0 bg-linear-to-r from-black to-black/0 w-160 h-full"></div>
 
       <PanelContainer>
         <LeftPanel className="gap-32 md:gap-0">

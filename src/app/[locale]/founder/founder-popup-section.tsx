@@ -24,7 +24,7 @@ const Step1 = () => {
           </h3>
         </div>
         <Image
-          src={"/images/founder.png"}
+          src={"/images/founder2.png"}
           alt="miner"
           width={1200}
           height={800}
@@ -53,23 +53,25 @@ const Step2 = () => {
 
   return (
     <>
-      <div className="absolute bottom-4 left-0 h-full flex flex-col">
-        <div className="flex justify-center px-8 md:px-20 mb-auto">
+      <div className="md:absolute p-4 pt-8 md:p-0! bottom-4 left-0 h-full flex flex-col">
+        <div className="flex justify-center px-8 md:px-18 mb-auto">
           <h3 className="text-primary text-[28px] md:text-[34px] font-title leading-none">
             {t("title")}
           </h3>
         </div>
-        <div className="h-40 bg-white text-primary rounded-lg flex justify-center items-center">
-          <PlayIcon color="size-6" fill="red" />
-        </div>
-        <div className="flex justify-center mt-8">
-          <Button
-            className="rounded-md px-20 font-title rtl:font-text"
-            size={"lg"}
-            onClick={handleClickCTA}
-          >
-            {t("cta")}
-          </Button>
+        <div className="px-8 md:px-20 mt-16 md:mt-0">
+          <div className="h-40 bg-white text-primary rounded-lg flex justify-center items-center">
+            <PlayIcon color="size-6" fill="red" />
+          </div>
+          <div className="flex justify-center mt-8">
+            <Button
+              className="rounded-md px-20 font-title rtl:font-text w-full"
+              size={"lg"}
+              onClick={handleClickCTA}
+            >
+              {t("cta")}
+            </Button>
+          </div>
         </div>
       </div>
     </>
