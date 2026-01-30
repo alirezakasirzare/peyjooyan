@@ -14,7 +14,7 @@ export const ArticleList = () => {
   const articles = data[locale];
 
   return (
-    <ul className="grid grid-cols-2 gap-4">
+    <ul className="grid md:grid-cols-2 gap-4">
       {articles.map((article) => (
         <li key={article.id}>
           <CardSheet>
