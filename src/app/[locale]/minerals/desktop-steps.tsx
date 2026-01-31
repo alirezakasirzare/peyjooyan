@@ -77,14 +77,14 @@ export const DesktopSteps = async () => {
   const t = await getTranslations("minerals");
   const items: StepShape[] = [
     {
-      title: t("steps.0"),
+      title: t("steps.step1"),
       isActive: true,
       moreLink: "/",
       onAction: () => {},
     },
-    { title: t("steps.1"), isActive: false },
-    { title: t("steps.2"), isActive: false },
-    { title: t("steps.3"), isActive: false },
+    { title: t("steps.step2"), isActive: false },
+    { title: t("steps.step3"), isActive: false },
+    { title: t("steps.step4"), isActive: false },
   ];
   return (
     <div className="hidden lg:block">

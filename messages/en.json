@@ -65,7 +65,6 @@
     "subtitle2": "THE MINERALS WE EXTRACT",
     "rockText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY.",
     "readMoreBtn": "READ MORE",
-    "steps": ["LEAD AND ZINC", "COPPER", "INDUSTRIAL SOIL", "POLYMETAL MINE"],
     "step1": {
       "title": "LEAD AND ZINC",
       "text1": "What sets us apart (main pillars of activity): Complete production chain: Our expertise starts from the precise exploration of metal deposits and continues to safe extraction and intelligent processing, including the production of high-purity 18% copper concentrate. We take responsibility for the entire process.",
@@ -79,6 +78,12 @@
     "step2": {
       "title": "LEAD AND ZINC",
       "cta": "VIEW IMAGES"
+    },
+    "steps": {
+      "step1": "LEAD AND ZINC",
+      "step2": "COPPER",
+      "step3": "INDUSTRIAL SOIL",
+      "step4": "POLYMETAL MINE"
     }
   },
   "ceo": {
