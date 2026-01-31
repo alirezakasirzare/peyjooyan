@@ -126,7 +126,19 @@
   "connectUs": {
     "title": "CONNECT",
     "subtitle": "WITH PEYJOOYAN",
-    "requestBtn": "REQUEST"
+    "requestBtn": "REQUEST",
+    "step1": {
+      "title": "REGISTER A CALL REQUEST <span>CEO</span>",
+      "subtitle": "SOROUSH POURSALEH",
+      "form": {
+        "title": "* REQUEST TITLE",
+        "name": "* FIRST AND LAST NAME",
+        "phoneNumber": "* CONTACT NUMBER",
+        "email": "EMAIL ADDRESS",
+        "description": "ENTER YOUR DESCRIPTION",
+        "submit": "REGISTRATION"
+      }
+    }
   },
   "footer": {
     "title": "FOOTER",

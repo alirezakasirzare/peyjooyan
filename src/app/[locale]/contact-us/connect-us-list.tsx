@@ -1,7 +1,11 @@
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "~/components/ui/button";
 import { CardSheet } from "~/components/ui/card-sheet";
 import pureDate from "~/data/connectUs.json";
+import { useRouter } from "~/i18n/navigation";
+import { ContactUsStore } from "./contact-us-store";
 
 const data = {
   en: pureDate.enConnectUs,
@@ -14,6 +18,17 @@ export const ConnectUsList = () => {
 
   const items = data[locale];
 
+  const router = useRouter();
+  const handleClick = (id: number) => {
+    switch (id) {
+      case 2:
+        ContactUsStore.setState({ step: 1 });
+        break;
+      case 4:
+        router.push("/footer");
+    }
+  };
+
   return (
     <ul className="grid grid-cols-2 gap-4">
       {items.map((item) => (
@@ -25,6 +40,7 @@ export const ConnectUsList = () => {
             <Button
               variant={"outline-secondary"}
               className="font-title mt-10 w-full"
+              onClick={() => handleClick(item.id)}
             >
               {t("requestBtn")}
             </Button>

@@ -8,6 +8,7 @@ import {
 } from "~/components/common/left-panel";
 import { PanelContainer } from "~/components/common/panel-container";
 import { ConnectUsList } from "./connect-us-list";
+import { ContactUsPopupSection } from "./contact-us-popup-section";
 
 const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
   const { locale } = await params;
@@ -17,15 +18,18 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
 
   return (
     <>
-      <Image
-        src={"/images/about.png"}
-        alt="about"
-        width={1200}
-        height={800}
-        className="w-full h-full object-cover fixed top-0 left-0"
-      />
+      {/* <div>
+        <Image
+          src={"/images/contact-us.gif"}
+          alt="about"
+          width={1200}
+          height={800}
+          className="absolute top-0 md:-top-20 -right-40 w-200 h-full object-cover object-top-left"
+        />
 
-      <div className="fixed left-0 top-0 bg-linear-to-r from-black to-black/0 w-full h-full bottom-22 -z-10"></div>
+        <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
+        <div className="fixed right-0 top-0 bg-linear-to-r from-black to-black/0 w-160 h-full"></div>
+      </div> */}
 
       <PanelContainer>
         <LeftPanel>
@@ -43,6 +47,8 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             <div className="h-[120px]"></div>
           </LeftPanelContent>
         </LeftPanel>
+
+        <ContactUsPopupSection />
       </PanelContainer>
     </>
   );
