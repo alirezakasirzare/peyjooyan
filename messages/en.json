@@ -145,6 +145,11 @@
       "cta": "REGISTRATION"
     }
   },
+  "news": {
+    "title": "NEWS",
+    "subtitle": "LATEST ARTICLES",
+    "cta": "READ MORE"
+  },
   "footer": {
     "title": "FOOTER",
     "subtitle": "PEYJOOYAN",

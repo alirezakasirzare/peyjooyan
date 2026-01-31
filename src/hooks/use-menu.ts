@@ -56,9 +56,13 @@ export const useMenu = () => {
   ];
 
   const activeItem = menuItems.find((item) => item.path === pathname);
+  const parentItem = menuItems.find(
+    (item) => pathname.startsWith(item.path) && item.path !== "/",
+  );
 
   return {
     items: menuItems,
     activeItem,
+    parentItem,
   };
 };

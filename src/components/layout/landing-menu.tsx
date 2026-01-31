@@ -84,7 +84,7 @@ const LandingNavs = () => {
   const otherLocale: "fa" | "en" = currentLocale === "en" ? "fa" : "en";
   const pathname = usePathname();
 
-  const { activeItem } = useMenu();
+  const { activeItem, parentItem } = useMenu();
 
   const handleOpenMenu = () => {
     menuStore.setState({
@@ -108,7 +108,7 @@ const LandingNavs = () => {
             className="font-medium font-text"
             size={"lg"}
           >
-            {activeItem?.text}
+            {activeItem?.text || parentItem?.text}
           </Button>
         </LiquidGlassBtnWrapper>
         <LiquidGlassBtnWrapper>
