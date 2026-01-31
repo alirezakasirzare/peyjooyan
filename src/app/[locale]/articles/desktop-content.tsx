@@ -13,6 +13,7 @@ export const DesktopContent = () => {
         className="h-screen overflow-hidden"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
+        scrollBarClassName="w-0"
       >
         <div className="py-20">
           <ArticleList />

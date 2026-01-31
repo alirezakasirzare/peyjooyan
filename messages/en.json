@@ -138,6 +138,11 @@
         "description": "ENTER YOUR DESCRIPTION",
         "submit": "REGISTRATION"
       }
+    },
+    "step2": {
+      "title": "REGISTER A CALL REQUEST <span>CEO</span>",
+      "subtitle": "SOROUSH POURSALEH",
+      "cta": "REGISTRATION"
     }
   },
   "footer": {

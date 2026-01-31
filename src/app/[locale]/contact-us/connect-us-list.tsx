@@ -21,9 +21,11 @@ export const ConnectUsList = () => {
   const router = useRouter();
   const handleClick = (id: number) => {
     switch (id) {
+      case 1:
       case 2:
         ContactUsStore.setState({ step: 1 });
         break;
+      case 3:
       case 4:
         router.push("/footer");
     }
@@ -34,7 +36,7 @@ export const ConnectUsList = () => {
       {items.map((item) => (
         <li key={item.id}>
           <CardSheet>
-            <h3 className="font-title text-center text-[70px] leading-none pt-5">
+            <h3 className="font-title text-center text-[40px] md:text-[70px] leading-none pt-5">
               {item.title}
             </h3>
             <Button

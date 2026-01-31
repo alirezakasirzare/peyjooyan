@@ -124,7 +124,7 @@ export function ContactUsForm() {
           )}
         />
 
-        <Button type="submit" size={"lg"} className="rounded-md">
+        <Button type="submit" size={"lg"} className="rounded-md font-title">
           {t("submit")}
         </Button>
       </FieldGroup>
