@@ -1,7 +1,6 @@
 "use client";
 
 import { useStore } from "@tanstack/react-store";
-import { RightPanel } from "~/components/common/right-panel";
 import { MineralsStore } from "./minerals-store";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -19,7 +18,7 @@ const Step1 = () => {
 
   return (
     <>
-      <div>
+      <div className="p-4 pt-8 md:pt-0!">
         <h3 className="text-primary text-[34px] font-title leading-none text-center">
           {t("title")}
         </h3>
@@ -62,11 +61,11 @@ const Step2 = () => {
     MineralsStore.setState({ step: 0 });
   };
   return (
-    <div>
+    <div className="w-screen md:w-auto p-4 pt-8 md:pt-0!">
       <h3 className="text-primary text-[34px] font-title leading-none text-center">
         {t("title")}
       </h3>
-      <div className="h-[500px] flex justify-center items-center">
+      <div className="h-[500px] flex justify-center items-center -mt-20 md:mt-0">
         <Image
           src={"/images/rock.gif"}
           alt="rock"

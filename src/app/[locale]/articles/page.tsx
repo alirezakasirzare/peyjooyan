@@ -9,7 +9,6 @@ import {
 import { PanelContainer } from "~/components/common/panel-container";
 import { Button } from "~/components/ui/button";
 import { ArticleList } from "./article-list";
-import { ScrollArea } from "~/components/ui/scroll-area";
 import { DesktopContent } from "./desktop-content";
 
 const ArticlesPage = async ({ params }: PageProps<"/[locale]/about-us">) => {

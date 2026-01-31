@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { ReadMoreBtn } from "./read-more-btn";
+import Image from "next/image";
 
 type NonActiveStepShape = {
   isActive: false;
@@ -72,7 +73,7 @@ const Step = async (
   );
 };
 
-export const Steps = async () => {
+export const DesktopSteps = async () => {
   const t = await getTranslations("minerals");
   const items: StepShape[] = [
     {
@@ -86,16 +87,26 @@ export const Steps = async () => {
     { title: t("steps.3"), isActive: false },
   ];
   return (
-    <ul className="flex">
-      {items.map((item, i) => (
-        <Step
-          key={i}
-          {...item}
-          number={i + 1}
-          isFirst={i === 0}
-          isLast={items.length - 1 === i}
-        />
-      ))}
-    </ul>
+    <div className="hidden lg:block">
+      <Image
+        src={"/images/rock.gif"}
+        alt="rock"
+        width={400}
+        height={400}
+        className="object-contain w-[180px] -mt-20 ml-64"
+      />
+      <p className="font-title text-sm">{t("rockText")}</p>
+      <ul className="flex mt-5">
+        {items.map((item, i) => (
+          <Step
+            key={i}
+            {...item}
+            number={i + 1}
+            isFirst={i === 0}
+            isLast={items.length - 1 === i}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };

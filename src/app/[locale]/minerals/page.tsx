@@ -1,8 +1,9 @@
 import { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { Steps } from "./steps";
+import { DesktopSteps } from "./desktop-steps";
 import { MineralsPopupSection } from "./minerals-popup-section";
+import { MobileSteps } from "./mobile-steps";
 
 const MineralsPage = async ({ params }: PageProps<"/[locale]/minerals">) => {
   const { locale } = await params;
@@ -33,18 +34,9 @@ const MineralsPage = async ({ params }: PageProps<"/[locale]/minerals">) => {
         <h3 className="font-title text-lg text-primary leading-none mt-3">
           {t("subtitle2")}
         </h3>
-        <div className="md:px-20">
-          <Image
-            src={"/images/rock.gif"}
-            alt="rock"
-            width={400}
-            height={400}
-            className="object-contain w-[180px] -mt-20 ml-64"
-          />
-          <p className="font-title text-sm">{t("rockText")}</p>
-          <div className="mt-5">
-            <Steps />
-          </div>
+        <div className="md:px-20 mt-10 md:mt-0">
+          <DesktopSteps />
+          <MobileSteps />
         </div>
       </div>
 
