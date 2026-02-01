@@ -118,5 +118,13 @@
       "subtitle": "با پی جویان",
       "cta": "درخواست"
     }
+  },
+  "footer": {
+    "title": "فوتر",
+    "subtitle": "پی جویان",
+    "addressTitle": "آدرس دفتر مرکزی",
+    "emailTitle": "ایمیل",
+    "contactTitle": "شماره تماس",
+    "linkedinTitle": "لینکدین"
   }
 }

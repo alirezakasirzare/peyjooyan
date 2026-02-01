@@ -47,13 +47,19 @@ export const ContactList = () => {
 
       <div className="grid grid-cols-3 gap-2 md:gap-4">
         <ContactItem title={t("emailTitle")}>
-          <p className="font-title text-xs md:text-base">{data.email}</p>
+          <p className="font-title rtl:font-text text-xs md:text-base">
+            {data.email}
+          </p>
         </ContactItem>
         <ContactItem title={t("contactTitle")}>
-          <p className="font-title text-xs md:text-base">{data.phone}</p>
+          <p className="font-title rtl:font-text text-xs md:text-base">
+            {data.phone}
+          </p>
         </ContactItem>
         <ContactItem title={t("linkedinTitle")}>
-          <p className="font-title text-xs md:text-base">{data.linkedin}</p>
+          <p className="font-title rtl:font-text text-xs md:text-base">
+            {data.linkedin}
+          </p>
         </ContactItem>
       </div>
     </div>
