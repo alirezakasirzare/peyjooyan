@@ -20,7 +20,7 @@ const NewsPage = async ({ params }: PageProps<"/[locale]/news">) => {
         {t("subtitle")}
       </h1>
 
-      <div className="flex gap-4 mt-5">
+      <div className="flex gap-4 mt-5 relative">
         <Button
           className="font-title rtl:font-text"
           variant={"outline-secondary"}

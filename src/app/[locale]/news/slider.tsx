@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Link } from "~/i18n/navigation";
 import pureData from "~/data/news.json";
 import { formatDate } from "~/lib/utils";
+import { useLocale } from "next-intl";
 
 type Slide = {
   id: number;
@@ -16,8 +17,15 @@ type Slide = {
   title: string;
 };
 
+const data = {
+  en: pureData.enNews,
+  fa: pureData.faNews,
+};
+
 export const Slider = () => {
-  const items: Slide[] = pureData.enNews.map((item) => ({
+  const locale = useLocale();
+  const slidersData = data[locale];
+  const items: Slide[] = slidersData.map((item) => ({
     id: item.id,
     src: item.src,
     date: new Date(item.date),

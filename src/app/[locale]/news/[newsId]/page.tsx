@@ -10,8 +10,13 @@ import {
   LeftPanelContent,
   LeftPanelHeader,
 } from "~/components/common/left-panel";
-import { RightPanel } from "~/components/common/right-panel";
 import { DesktopImage } from "./desctop-image";
+import { routing } from "~/i18n/routing";
+
+const data = {
+  en: pureData.enNews,
+  fa: pureData.faNews,
+};
 
 const SingleNewsPage = async ({
   params,
@@ -19,7 +24,9 @@ const SingleNewsPage = async ({
   const { locale, newsId } = await params;
   setRequestLocale(locale as Locale);
 
-  const item = pureData.enNews.find((item) => item.id.toString() === newsId);
+  const slidersData = data[locale as "en" | "fa"];
+
+  const item = slidersData.find((item) => item.id.toString() === newsId);
   if (!item) return notFound();
 
   return (
