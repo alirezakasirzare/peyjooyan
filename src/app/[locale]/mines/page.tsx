@@ -25,10 +25,10 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
         alt="about"
         width={1200}
         height={800}
-        className="w-full md:w-[70%] h-80 md:h-full object-cover fixed top-0 right-0 -z-10"
+        className="w-full md:w-[70%] h-80 md:h-full object-cover fixed top-0 right-0 rtl:left-0 rtl:right-auto -z-10"
       />
 
-      <div className="hidden md:block fixed -right-[200px] top-0 bg-linear-to-r from-black to-black/0 w-[calc(70%+200px)] h-full bottom-22 -z-10"></div>
+      <div className="hidden md:block fixed -right-[200px] rtl:right-auto rtl:-left-[200px] top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-[calc(70%+200px)] h-full bottom-22 -z-10"></div>
       <div className="md:hidden fixed left-0 -top-20 bg-linear-to-t from-black to-black/0 w-full h-100 bottom-22 -z-10"></div>
 
       <PanelContainer>
