@@ -26,7 +26,7 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
           alt="founder"
           width={1200}
           height={800}
-          className="absolute top-0 md:top-auto md:bottom-0 right-0 w-80 md:w-160"
+          className="absolute top-0 md:top-auto md:bottom-0 right-0 rtl:right-auto rtl:left-0 w-80 md:w-160 rtl:-scale-x-100"
         />
         <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
       </div>
