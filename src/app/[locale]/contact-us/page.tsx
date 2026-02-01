@@ -24,7 +24,7 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           alt="contact-us"
           width={1200}
           height={800}
-          className="absolute top-0 -right-40 w-200 h-full object-cover object-top-left hidden md:block"
+          className="absolute top-0 -right-40 rtl:right-auto rtl:-left-40 rtl:-scale-x-100 w-200 h-full object-cover object-top-left hidden md:block"
         />
 
         <Image
@@ -32,11 +32,11 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           alt="contact-us"
           width={1200}
           height={800}
-          className="absolute -top-10 -right-20 h-80 w-100 object-cover object-top-left md:hidden"
+          className="absolute -top-10 -right-20 rtl:right-auto rtl:-left-20 rtl:-scale-x-100 h-80 w-100 object-cover object-top-left md:hidden"
         />
 
         <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
-        <div className="fixed right-0 top-0 bg-linear-to-r from-black to-black/0 w-160 h-full"></div>
+        <div className="fixed right-0 rtl:right-auto rtl:left-0 top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-160 h-full"></div>
       </div>
 
       <PanelContainer>

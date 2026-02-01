@@ -57,7 +57,7 @@ const Step2 = () => {
         alt="miner"
         width={1200}
         height={800}
-        className="w-screen md:w-full md:absolute left-0 bottom-0 -z-10"
+        className="md:w-full md:absolute left-0 bottom-0 -z-10"
       />
       <div className="absolute bottom-4 left-0">
         <div className="flex justify-center px-8 md:px-20">

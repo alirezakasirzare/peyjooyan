@@ -36,10 +36,7 @@ const Step2 = () => {
 
   return (
     <>
-      <div
-        className="md:absolute p-4 pt-8 md:p-0! bottom-4 right-0 h-full flex flex-col"
-        onClick={handleClickCTA}
-      >
+      <div className="md:absolute p-4 pt-8 md:p-0! bottom-4 right-0 h-full flex flex-col">
         <div className="px-10">
           <h3 className="text-primary text-[28px] md:text-[34px] font-title leading-none">
             {t.rich("title", {

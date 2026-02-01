@@ -28,7 +28,7 @@ export const RightPanel = ({
           <LiquidGlassCardWrapper
           // padding="40px 0 0 0"
           >
-            {children}
+            <div className="w-screen">{children}</div>
           </LiquidGlassCardWrapper>
         </SheetContent>
       </Sheet>

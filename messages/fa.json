@@ -96,5 +96,27 @@
     "title": "مقالات",
     "subtitle": "جدیدترین مقالات",
     "readMore": "مشاهده همه"
+  },
+  "connectUs": {
+    "title": "تماس",
+    "subtitle": "با پی جویان",
+    "requestBtn": "درخواست",
+    "step1": {
+      "title": "ثبت درخواست تماس <span>CEO</span>",
+      "subtitle": "سروش پورصالح",
+      "form": {
+        "title": "* عنوان درخواست",
+        "name": "* نام و نام خانوادگی",
+        "phoneNumber": "* شماره موبایل",
+        "email": "ایمیل آدرس",
+        "description": "توضیحات",
+        "submit": "درخواست"
+      }
+    },
+    "step2": {
+      "title": "ثبت درخواست تماس <span>CEO</span>",
+      "subtitle": "با پی جویان",
+      "cta": "درخواست"
+    }
   }
 }

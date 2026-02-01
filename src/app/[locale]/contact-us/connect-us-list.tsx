@@ -41,7 +41,7 @@ export const ConnectUsList = () => {
             </h3>
             <Button
               variant={"outline-secondary"}
-              className="font-title mt-10 w-full"
+              className="font-title mt-10 w-full rtl:font-text"
               onClick={() => handleClick(item.id)}
             >
               {t("requestBtn")}
