@@ -24,8 +24,6 @@ const Step = async (
     isLast?: boolean;
   },
 ) => {
-  const t = await getTranslations("minerals");
-
   return (
     <li
       className={cn(
@@ -36,7 +34,7 @@ const Step = async (
       )}
     >
       {data.isActive && (
-        <div className="w-10 absolute left-26 top-0 flex flex-row gap-2">
+        <div className="w-10 absolute start-26 top-0 flex flex-row gap-2">
           <ReadMoreBtn />
           <Button
             size={"icon-sm"}
@@ -50,9 +48,9 @@ const Step = async (
 
       <div
         className={cn("flex flex-col gap-2 items-center relative px-4 w-max", {
-          "before:content-[''] before:absolute before:left-0 before:top-4 before:-translate-y-1/2 before:w-1/2 before:h-[8px] before:bg-background":
+          "before:content-[''] before:absolute before:start-0 before:top-4 before:-translate-y-1/2 before:w-1/2 before:h-[8px] before:bg-background":
             data.isFirst,
-          "after:content-[''] after:absolute after:right-0 after:top-4 after:-translate-y-1/2 after:w-1/2 after:h-[8px] after:bg-background":
+          "after:content-[''] after:absolute after:end-0 after:top-4 after:-translate-y-1/2 after:w-1/2 after:h-[8px] after:bg-background":
             data.isLast,
         })}
       >
@@ -93,9 +91,9 @@ export const DesktopSteps = async () => {
         alt="rock"
         width={400}
         height={400}
-        className="object-contain w-[180px] -mt-20 ml-64"
+        className="object-contain w-[180px] -mt-20 ms-64"
       />
-      <p className="font-title text-sm">{t("rockText")}</p>
+      <p className="font-title text-sm rtl:font-text">{t("rockText")}</p>
       <ul className="flex mt-5">
         {items.map((item, i) => (
           <Step

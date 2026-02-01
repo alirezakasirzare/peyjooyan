@@ -15,7 +15,7 @@ export const ReadMoreBtn = () => {
     <Button
       size={"sm"}
       variant={"secondary"}
-      className="rounded-full font-title"
+      className="rounded-full font-title rtl:font-text"
       onClick={handleClick}
     >
       {t("readMoreBtn")}

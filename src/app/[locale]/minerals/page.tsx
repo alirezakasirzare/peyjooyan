@@ -23,7 +23,7 @@ const MineralsPage = async ({ params }: PageProps<"/[locale]/minerals">) => {
 
       <div className="fixed left-0 top-0 bg-linear-to-t from-black to-black/0 w-full h-full bottom-22 z-10"></div>
 
-      {/* <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh)] bottom-0"></div> */}
+      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh)] bottom-0"></div>
       <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50">
         <h2 className="font-title text-[60px] md:text-[60px] leading-none">
           {t("title")}

@@ -38,7 +38,7 @@ export const RightPopupCard = ({
   if (!isOpen) return null;
 
   return (
-    <div className="w-110 max-w-full fixed top-0 right-0 h-screen z-50">
+    <div className="w-110 max-w-full fixed top-0 end-0 h-screen z-50">
       <LiquidGlassCardWrapper className="border-none" radius={0}>
         <div className="w-110 max-w-full h-screen p-6 md:p-10">{children}</div>
       </LiquidGlassCardWrapper>

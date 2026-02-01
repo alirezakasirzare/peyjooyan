@@ -50,7 +50,7 @@ const Step = (
 
       {data.isActive && (
         <div className="flex flex-col items-center gap-2 ps-10 pt-4">
-          <p className="font-title text-sm">{t("rockText")}</p>
+          <p className="font-title text-sm rtl:font-text">{t("rockText")}</p>
           <Image
             src={"/images/rock.gif"}
             alt="rock"
@@ -96,7 +96,7 @@ export const MobileSteps = () => {
       onMouseLeave={handleLeave}
       scrollBarClassName="w-0"
     >
-      <ul className="flex flex-col gap-4 before:content-[''] before:absolute before:left-4 before:h-[calc(100%-20px)] before:top-1/2 before:-translate-1/2 before:bottom-0 before:w-px before:bg-primary relative">
+      <ul className="flex flex-col gap-4 before:content-[''] before:absolute before:start-4 before:h-[calc(100%-20px)] before:top-1/2 before:-translate-1/2 before:bottom-0 before:w-px before:bg-primary relative">
         {items.map((item, i) => (
           <Step
             key={i}
