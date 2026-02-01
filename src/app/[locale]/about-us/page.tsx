@@ -24,7 +24,7 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
         className="w-full h-full object-cover fixed top-0 left-0"
       />
 
-      <div className="fixed left-0 top-0 bg-linear-to-r from-black to-black/0 w-full h-full bottom-22 -z-10"></div>
+      <div className="fixed left-0 top-0 bg-linear-to-t md:bg-linear-to-r rtl:md:bg-linear-to-l from-black to-black/10 w-full h-full bottom-22"></div>
 
       <PanelContainer>
         <LeftPanel>
@@ -32,7 +32,7 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             <h2 className="font-title text-[60px] md:text-[120px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none">
+            <h1 className="font-title text-[60px] md:text-[110px] text-primary leading-none">
               {t("subtitle")}
             </h1>
             <h3 className="font-title text-xl text-primary leading-none mt-3">

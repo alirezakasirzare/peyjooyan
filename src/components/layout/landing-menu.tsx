@@ -2,7 +2,7 @@
 
 import { LanguagesIcon, MenuIcon, XIcon } from "lucide-react";
 import { Button } from "../ui/button";
-import { Link } from "~/i18n/navigation";
+import { Link, usePathname } from "~/i18n/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +16,6 @@ import { LiquidGlassBtnWrapper } from "../sections/liquid-glass-btn-wrapper";
 import { useStore } from "@tanstack/react-store";
 import { menuStore } from "~/store/menu-store";
 import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export const Menu = () => {
