@@ -8,7 +8,7 @@ export const DesktopContent = () => {
   const { handleEnter, handleLeave } = useNoNavigationWithScroll();
 
   return (
-    <div className="hidden lg:block px-20">
+    <div className="hidden lg:block px-20 w-[800px]">
       <ScrollArea
         className="h-screen overflow-hidden"
         onMouseEnter={handleEnter}

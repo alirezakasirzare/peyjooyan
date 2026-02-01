@@ -18,7 +18,7 @@ export const ArticleList = () => {
       {articles.map((article) => (
         <li key={article.id}>
           <CardSheet>
-            <div className="flex">
+            <div className="flex justify-between">
               <h6 className="font-title">{article.title}</h6>
               <Button size={"icon"}>
                 <ArrowUpRightIcon className="size-4 fill-primary" />
