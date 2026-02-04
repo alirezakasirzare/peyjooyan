@@ -1,7 +1,9 @@
+import "swiper/css";
+import "swiper/css/effect-cards";
 import "../globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "~/i18n/routing";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";

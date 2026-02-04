@@ -2,13 +2,12 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-cards";
 import Image from "next/image";
 import { Link } from "~/i18n/navigation";
 import pureData from "~/data/news.json";
 import { formatDate } from "~/lib/utils";
 import { useLocale } from "next-intl";
+import { useState } from "react";
 
 type Slide = {
   id: number;
@@ -24,6 +23,7 @@ const data = {
 
 export const Slider = () => {
   const locale = useLocale();
+  const [activeIndex, setActiveIndex] = useState(0);
   const slidersData = data[locale];
   const items: Slide[] = slidersData.map((item) => ({
     id: item.id,
@@ -34,11 +34,20 @@ export const Slider = () => {
 
   return (
     <div className="max-w-[300px] mx-auto">
-      <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]}>
+      <Swiper
+        effect={"cards"}
+        grabCursor={true}
+        modules={[EffectCards]}
+        onSlideChange={(e) => {
+          setActiveIndex(e.activeIndex);
+        }}
+      >
         {items.map((item, i) => (
           <SwiperSlide key={i} className="relative">
             <Link href={`/news/${item.id}`}>
-              <div className="absolute inset-0 bg-background/50"></div>
+              {activeIndex !== i && (
+                <div className="absolute inset-0 bg-background/50"></div>
+              )}
               <Image src={item.src} alt="workers" width={300} height={600} />
               <div className="absolute left-1/2 -translate-x-1/2 bottom-12 font-title w-full px-10 text-xl">
                 {item.title}

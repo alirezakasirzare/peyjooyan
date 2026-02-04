@@ -34,6 +34,14 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
 
       <div className="fixed end-0 top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-160 h-full"></div>
 
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
+
       <PanelContainer>
         <LeftPanel className="gap-32 md:gap-0">
           <LeftPanelHeader>

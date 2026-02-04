@@ -42,18 +42,15 @@ const SingleNewsPage = async ({
           </p>
         </LeftPanelHeader>
         <LeftPanelContent>
-          <div className="relative md:hidden">
-            <Image
-              src={item.src}
-              alt={item.title}
-              width={300}
-              height={600}
-              className="w-full"
-            />
-            <div className="absolute inset-0 bg-background/50"></div>
-          </div>
+          <Image
+            src={item.src}
+            alt={item.title}
+            width={300}
+            height={600}
+            className="w-full relative md:hidden"
+          />
 
-          <div className="text-foreground/80 mt-4 pb-20">{item.content}</div>
+          <div className="text-foreground/60 mt-4 pb-20">{item.content}</div>
         </LeftPanelContent>
       </LeftPanel>
 
