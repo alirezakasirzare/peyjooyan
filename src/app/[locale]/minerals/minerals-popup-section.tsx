@@ -24,7 +24,7 @@ const Step1 = () => {
         </h3>
         <ScrollArea
           type="hover"
-          className="grow overflow-hidden"
+          className="grow max-md:h-[calc(100vh-250px)] overflow-hidden"
           scrollBarClassName="w-0"
         >
           <div className="text-foreground/80 text-justify font-extralight flex flex-col gap-3">

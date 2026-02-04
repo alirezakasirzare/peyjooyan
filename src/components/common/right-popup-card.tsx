@@ -25,13 +25,15 @@ export const RightPopupCard = ({
           if (e === false) onCloseMobile?.();
         }}
       >
-        <SheetContent side="bottom" pureStyle>
+        <SheetContent side="bottom" pureStyle className="translate-y-15">
           {/* for shadcn error throwing */}
           <SheetTitle className="hidden"></SheetTitle>
           <LiquidGlassCardWrapper
-          // padding="40px 0 0 0"
+            // padding="40px 0 0 0"
+            radius={50}
+            padding="0 0 40px 0"
           >
-            {children}
+            <div className="w-screen pb-10">{children}</div>
           </LiquidGlassCardWrapper>
         </SheetContent>
       </Sheet>

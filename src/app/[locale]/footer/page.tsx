@@ -28,6 +28,14 @@ const FooterPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
         <div className="absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-full pointer-events-none" />
       </div>
 
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
+
       <PanelContainer>
         <LeftPanel>
           <LeftPanelHeader>

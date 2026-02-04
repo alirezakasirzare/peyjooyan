@@ -28,12 +28,12 @@ const Step1 = () => {
           alt="miner"
           width={1200}
           height={800}
-          className="w-full"
+          className="w-full rtl:-scale-x-100"
         />
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-8 md:px-20">
           <Button
-            className="rounded-md px-20 font-title rtl:font-text"
+            className="rounded-md font-title rtl:font-text w-full"
             size={"lg"}
             onClick={handleClickCTA}
           >
@@ -63,7 +63,7 @@ const Step2 = () => {
           <div className="h-40 bg-white text-primary rounded-lg flex justify-center items-center">
             <PlayIcon color="size-6" fill="red" />
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-8 pb-10">
             <Button
               className="rounded-md px-20 font-title rtl:font-text w-full"
               size={"lg"}

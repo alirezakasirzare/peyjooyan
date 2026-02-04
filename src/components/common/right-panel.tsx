@@ -4,6 +4,7 @@ import { useIsMobile } from "~/hooks/use-is-mobile";
 import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { ScrollArea } from "../ui/scroll-area";
+import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 
 export const RightPanel = ({
   children,
@@ -15,6 +16,7 @@ export const RightPanel = ({
   isOpen?: boolean;
 }) => {
   const isMobile = useIsMobile();
+  const { handleEnter, handleLeave } = useNoNavigationWithScroll();
   if (isMobile) {
     return (
       <Sheet
@@ -46,7 +48,11 @@ export const RightPanel = ({
   if (!isOpen) return null;
 
   return (
-    <div className="w-110 max-w-full pt-6 md:pt-10">
+    <div
+      className="w-110 max-w-full pt-6 md:pt-10"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <div className="relative z-50 h-full">{children}</div>
     </div>
   );

@@ -27,12 +27,12 @@ const Step1 = () => {
           alt="miner"
           width={1200}
           height={800}
-          className="w-full"
+          className="w-full rtl:-scale-x-100"
         />
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-8 md:px-20">
           <Button
-            className="rounded-md px-20 font-title rtl:font-text"
+            className="rounded-md w-full font-title rtl:font-text"
             size={"lg"}
             onClick={handleClickCTA}
           >

@@ -27,7 +27,7 @@ const Step1 = () => {
           alt="miner"
           width={1200}
           height={800}
-          className="w-full"
+          className="w-full rtl:-scale-x-100"
         />
 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full px-8 md:px-20">
