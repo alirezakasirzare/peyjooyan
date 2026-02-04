@@ -21,26 +21,34 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
         alt="about"
         width={1200}
         height={800}
-        className="w-full h-full object-cover fixed top-0 left-0"
+        className="w-full h-full object-cover fixed top-0 left-0 rtl:-scale-x-100"
       />
 
-      <div className="fixed left-0 top-0 bg-linear-to-t md:bg-linear-to-r rtl:md:bg-linear-to-l from-black to-black/10 w-full h-full bottom-22"></div>
+      <div className="fixed left-0 top-0 bg-linear-to-t md:bg-linear-to-r rtl:md:bg-linear-to-l from-black via-black/80 to-black/0 w-full h-full bottom-22"></div>
+
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
 
       <PanelContainer>
         <LeftPanel>
           <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[120px] leading-none">
+            <h2 className="font-title text-[60px] md:text-[110px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-[60px] md:text-[110px] text-primary leading-none">
+            <h1 className="font-title text-[60px] md:text-[110px] text-primary leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-6">
               {t("subtitle")}
             </h1>
-            <h3 className="font-title text-xl text-primary leading-none mt-3">
+            <h3 className="font-title text-xl md:text-[30px] text-primary leading-none rtl:mt-3">
               {t("subtitle2")}
             </h3>
           </LeftPanelHeader>
           <LeftPanelContent>
-            <div className="text-foreground/80 text-justify font-extralight">
+            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-4">
               <p>{t("text1")}</p>
               <p>{t("text2")}</p>
               <p>{t("text3")}</p>
