@@ -48,7 +48,7 @@ const AboutUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             </h3>
           </LeftPanelHeader>
           <LeftPanelContent>
-            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-4">
+            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
               <p>{t("text1")}</p>
               <p>{t("text2")}</p>
               <p>{t("text3")}</p>

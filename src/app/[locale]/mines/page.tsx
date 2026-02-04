@@ -11,6 +11,7 @@ import { PanelContainer } from "~/components/common/panel-container";
 import { Button } from "~/components/ui/button";
 import { ReadMoreBtn } from "./read-more-btn";
 import { MinesPopupSection } from "./mines-popup-section";
+import { ArrowIcon } from "~/components/sections/arrow-icon";
 
 const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
   const { locale } = await params;
@@ -28,24 +29,32 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
         className="w-full md:w-[70%] h-80 md:h-full object-cover fixed top-0 right-0 rtl:left-0 rtl:right-auto -z-10"
       />
 
-      <div className="hidden md:block fixed -right-[200px] rtl:right-auto rtl:-left-[200px] top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-[calc(70%+200px)] h-full bottom-22 -z-10"></div>
+      <div className="hidden md:block fixed -right-[200px] rtl:right-auto rtl:-left-[200px] top-0 bg-linear-to-r rtl:bg-linear-to-l from-black via-black/80 to-black/0 w-[calc(70%+200px)] h-full bottom-22 -z-10"></div>
       <div className="md:hidden fixed left-0 -top-20 bg-linear-to-t from-black to-black/0 w-full h-100 bottom-22 -z-10"></div>
+
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
 
       <PanelContainer>
         <LeftPanel>
           <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[120px] leading-none">
+            <h2 className="font-title text-[60px] md:text-[110px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none">
+            <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-6">
               {t("subtitle")}
             </h1>
-            <h3 className="font-title text-xl text-primary leading-none mt-3">
+            <h3 className="font-title md:text-[30px] text-primary leading-none rtl:mt-3">
               {t("subtitle2")}
             </h3>
           </LeftPanelHeader>
           <LeftPanelContent>
-            <div className="text-foreground/80 text-justify font-extralight">
+            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
               <p>{t("text1")}</p>
               <p>{t("text2")}</p>
               <p>{t("text3")}</p>
@@ -73,7 +82,7 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
             <div className="flex gap-4 absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2">
               <ReadMoreBtn />
               <Button size={"icon"}>
-                <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
+                <ArrowIcon />
               </Button>
             </div>
           </LeftPanelContent>

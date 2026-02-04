@@ -17,6 +17,7 @@ import { useStore } from "@tanstack/react-store";
 import { menuStore } from "~/store/menu-store";
 import { useLocale } from "next-intl";
 import Image from "next/image";
+import { cn } from "~/lib/utils";
 
 export const Menu = () => {
   const isMobile = useIsMobile();
@@ -110,14 +111,18 @@ export const LandingMenu = () => {
 
       <div className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 w-min">
         <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
-          <LiquidGlassBtnWrapper>
+          <LiquidGlassBtnWrapper
+            className={cn({ "invisible opacity-0": isOpen })}
+          >
             <Button variant={"glass"} size={"icon-lg"} asChild>
               <Link href={pathname} locale={otherLocale}>
                 <LanguagesIcon className="size-4" />
               </Link>
             </Button>
           </LiquidGlassBtnWrapper>
-          <LiquidGlassBtnWrapper>
+          <LiquidGlassBtnWrapper
+            className={cn({ "invisible opacity-0": isOpen })}
+          >
             <Button
               variant={"glass"}
               className="font-medium font-text"

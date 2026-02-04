@@ -16,7 +16,7 @@ const Step1 = () => {
 
   return (
     <>
-      <div className="md:absolute left-0 bottom-0 -z-10 w-full pt-8 md:pt-0">
+      <div className="md:absolute left-0 bottom-0 -z-10 w-full pt-9 md:pt-0">
         <div className="px-10 md:pe-0 md:ps-20 flex justify-center mb-2">
           <h3 className="text-primary text-[34px] font-title leading-none">
             {t("title")}
@@ -30,9 +30,9 @@ const Step1 = () => {
           className="w-full"
         />
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full px-8 md:px-20">
           <Button
-            className="rounded-md px-20 font-title rtl:font-text"
+            className="rounded-md font-title rtl:font-text w-full"
             size={"lg"}
             onClick={handleClickCTA}
           >
@@ -57,17 +57,17 @@ const Step2 = () => {
         alt="miner"
         width={1200}
         height={800}
-        className="md:w-full md:absolute left-0 bottom-0 -z-10"
+        className="md:w-full md:absolute left-0 bottom-0 -z-10 rtl:-scale-x-100"
       />
-      <div className="absolute bottom-4 left-0">
+      <div className="absolute bottom-12 left-0">
         <div className="flex justify-center px-8 md:px-20">
           <h3 className="text-white text-[34px] font-title leading-none">
             {t("title")}
           </h3>
         </div>
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 px-8 md:px-20">
           <Button
-            className="rounded-md px-20 font-title rtl:font-text"
+            className="rounded-md font-title rtl:font-text w-full"
             size={"lg"}
             onClick={handleClickCTA}
           >

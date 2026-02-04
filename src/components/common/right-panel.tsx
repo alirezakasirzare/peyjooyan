@@ -3,6 +3,7 @@
 import { useIsMobile } from "~/hooks/use-is-mobile";
 import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
+import { ScrollArea } from "../ui/scroll-area";
 
 export const RightPanel = ({
   children,
@@ -22,14 +23,21 @@ export const RightPanel = ({
           if (e === false) onCloseMobile?.();
         }}
       >
-        <SheetContent side="bottom" pureStyle>
+        <SheetContent side="bottom" pureStyle className="translate-y-15">
           {/* for shadcn error throwing */}
           <SheetTitle className="hidden"></SheetTitle>
+          {/* <ScrollArea
+            className="h-[calc(80vh-50px)] overflow-hidden"
+            scrollBarClassName="w-0"
+          > */}
           <LiquidGlassCardWrapper
-          // padding="40px 0 0 0"
+            // padding="40px 0 0 0"
+            radius={50}
+            padding="0 0 40px 0"
           >
             <div className="w-screen">{children}</div>
           </LiquidGlassCardWrapper>
+          {/* </ScrollArea> */}
         </SheetContent>
       </Sheet>
     );
