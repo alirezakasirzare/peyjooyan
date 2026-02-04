@@ -9,6 +9,7 @@ import Image from "next/image";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 import { useTranslations } from "next-intl";
+import { ArrowIcon } from "~/components/sections/arrow-icon";
 
 type NonActiveStepShape = {
   isActive: false;
@@ -50,7 +51,9 @@ const Step = (
 
       {data.isActive && (
         <div className="flex flex-col items-center gap-2 ps-10 pt-4">
-          <p className="font-title text-sm rtl:font-text">{t("rockText")}</p>
+          <p className="font-title text-sm rtl:font-text text-foreground/80">
+            {t("rockText")}
+          </p>
           <Image
             src={"/images/rock.gif"}
             alt="rock"
@@ -65,7 +68,7 @@ const Step = (
               className="rounded-full"
               variant={"secondary"}
             >
-              <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
+              <ArrowIcon />
             </Button>
           </div>
         </div>

@@ -18,16 +18,16 @@ const Step1 = () => {
 
   return (
     <>
-      <div className="p-4 pt-8 md:pt-0!">
+      <div className="p-4 pt-8 md:pt-0! h-full flex flex-col gap-4">
         <h3 className="text-primary text-[34px] font-title leading-none text-center">
           {t("title")}
         </h3>
         <ScrollArea
           type="hover"
-          className="grow overflow-hidden h-[500px]"
+          className="grow overflow-hidden"
           scrollBarClassName="w-0"
         >
-          <div className="text-foreground/80 text-justify font-extralight">
+          <div className="text-foreground/80 text-justify font-extralight flex flex-col gap-3">
             <p>{t("text1")}</p>
             <p>{t("text2")}</p>
             <p>{t("text3")}</p>
@@ -61,7 +61,7 @@ const Step2 = () => {
     MineralsStore.setState({ step: 0 });
   };
   return (
-    <div className="w-screen md:w-auto p-4 pt-8 md:pt-0!">
+    <div className="p-4 pt-8 md:pt-0! h-full flex flex-col gap-4">
       <h3 className="text-primary text-[34px] font-title leading-none text-center">
         {t("title")}
       </h3>

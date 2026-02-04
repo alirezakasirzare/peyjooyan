@@ -125,7 +125,7 @@ export const LandingMenu = () => {
           >
             <Button
               variant={"glass"}
-              className="font-medium font-text"
+              className="font-medium font-text font-title rtl:font-text"
               size={"lg"}
             >
               {activeItem?.text || parentItem?.text}

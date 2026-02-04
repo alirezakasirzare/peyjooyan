@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { ReadMoreBtn } from "./read-more-btn";
 import Image from "next/image";
+import { ArrowIcon } from "~/components/sections/arrow-icon";
 
 type NonActiveStepShape = {
   isActive: false;
@@ -41,7 +42,7 @@ const Step = async (
             className="rounded-full"
             variant={"secondary"}
           >
-            <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
+            <ArrowIcon />
           </Button>
         </div>
       )}
@@ -91,9 +92,11 @@ export const DesktopSteps = async () => {
         alt="rock"
         width={400}
         height={400}
-        className="object-contain w-[180px] -mt-20 ms-64"
+        className="object-contain w-[220px] -mt-20 ms-64"
       />
-      <p className="font-title text-sm rtl:font-text">{t("rockText")}</p>
+      <p className="font-title text-sm rtl:font-text ps-14 rtl:ps-9 text-foreground/80">
+        {t("rockText")}
+      </p>
       <ul className="flex mt-5">
         {items.map((item, i) => (
           <Step

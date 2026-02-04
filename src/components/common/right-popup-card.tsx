@@ -3,6 +3,8 @@
 import { useIsMobile } from "~/hooks/use-is-mobile";
 import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
+import { useMenuScroll } from "~/hooks/use-menu-scroll";
+import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 
 export const RightPopupCard = ({
   children,
@@ -14,6 +16,7 @@ export const RightPopupCard = ({
   isOpen?: boolean;
 }) => {
   const isMobile = useIsMobile();
+  const { handleEnter, handleLeave } = useNoNavigationWithScroll();
   if (isMobile) {
     return (
       <Sheet
@@ -38,9 +41,15 @@ export const RightPopupCard = ({
   if (!isOpen) return null;
 
   return (
-    <div className="w-110 max-w-full fixed top-0 end-0 h-screen z-50">
+    <div
+      className="w-110 max-w-full fixed top-0 end-0 h-screen z-50"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <LiquidGlassCardWrapper className="border-none" radius={0}>
-        <div className="w-110 max-w-full h-screen p-6 md:p-10">{children}</div>
+        <div className="w-110 max-w-full h-screen pt-6 md:pt-10">
+          {children}
+        </div>
       </LiquidGlassCardWrapper>
     </div>
   );
