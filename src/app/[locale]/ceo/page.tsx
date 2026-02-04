@@ -54,13 +54,13 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
       <PanelContainer>
         <LeftPanel className="gap-32 md:gap-0">
           <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[90px] leading-none">
+            <h2 className="font-title text-[60px] md:text-[100px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-lg md:text-[60px] rtl:md:text-[30px] text-primary leading-none">
+            <h1 className="font-title text-lg md:text-[60px] rtl:md:text-[30px] text-primary leading-none -mt-1 md:-mt-3 rtl:mt-2">
               {t("subtitle")}
             </h1>
-            <h3 className="font-title text-lg md:text-xl leading-none mt-3">
+            <h3 className="font-title text-lg md:text-xl leading-none rtl:mt-2">
               2012 | 2020
             </h3>
             <div className="mt-2">
@@ -68,7 +68,7 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
             </div>
           </LeftPanelHeader>
           <LeftPanelContent>
-            <div className="text-foreground/80 text-justify font-extralight">
+            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
               <p>{t("text1")}</p>
               <p>{t("text2")}</p>
               <p>{t("text3")}</p>

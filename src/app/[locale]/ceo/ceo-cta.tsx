@@ -18,13 +18,13 @@ export const CeoCta = () => {
   return (
     <>
       <div className="fixed top-0 md:top-auto md:bottom-0 end-0 z-51 md:z-auto">
-        <div className="relative">
+        <div className="relative h-72 md:h-auto overflow-hidden md:overflow-visible">
           <Image
             src={"/images/ceo.gif"}
             alt="ceo"
             width={1200}
             height={800}
-            className="object-cover w-[57%] ms-auto md:w-96 rtl:-scale-x-100"
+            className="object-cover w-54 ms-auto md:w-96 rtl:-scale-x-100"
           />
           <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-full pointer-events-none" />
         </div>
@@ -61,7 +61,7 @@ export const CeoCta = () => {
             className="w-full -scale-x-100 md:scale-x-100 rtl:scale-x-100 rtl:md:-scale-x-100"
           />
           <div className="absolute left-1/2 top-1/2 -translate-1/2">
-            <p className="font-title text-xs md:text-base">
+            <p className="font-title text-[10px] md:text-[17px]">
               {t.rich("title", {
                 span: (e) => <span className="text-primary">{e}</span>,
               })}
