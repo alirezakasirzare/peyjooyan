@@ -34,13 +34,13 @@ const FooterPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             <h2 className="font-title text-[60px] md:text-[110px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-[20px] md:text-[70px] leading-none">
+            <h1 className="font-title text-[20px] md:text-[70px] leading-none -mt-1 md:-mt-3 rtl:mt-2 rtl:md:-mt-1">
               {t("subtitle")}
             </h1>
           </LeftPanelHeader>
           <LeftPanelContent>
             <ContactList />
-            <div className="relative">
+            <div className="relative md:hidden">
               <Image
                 src={"/images/footer.png"}
                 alt="footer"

@@ -34,7 +34,7 @@ export const ContactList = () => {
         <p className="font-title text-foreground/80 text-xs md:text-base">
           {address}
         </p>
-        <CardSheet className="mt-4">
+        <CardSheet className="mt-4 md:w-2/3 max-w-full">
           <Image
             src={"/images/map.png"}
             width={400}
