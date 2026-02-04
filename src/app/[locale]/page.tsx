@@ -2,6 +2,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import { ArrowIcon } from "~/components/sections/arrow-icon";
 import { Button } from "~/components/ui/button";
 import { Link } from "~/i18n/navigation";
 
@@ -18,10 +19,20 @@ const HomePage = async ({ params }: PageProps<"/[locale]">) => {
         alt="hero"
         width={1200}
         height={800}
-        className="w-full h-screen fixed top-0 left-0 object-cover"
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-cover"
       />
 
-      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-[calc(100vh)] bottom-0"></div>
+      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-screen bottom-0 hidden md:block"></div>
+      <div className="fixed top-0 left-0 bg-linear-to-t from-black to-black/0 w-full h-2/3 bottom-0 md:hidden"></div>
+
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
+
       <div className="fixed left-1/2 bottom-26 -translate-x-1/2 w-full">
         <div className="w-max mx-auto">
           <h1 className="text-primary font-title text-center font-medium leading-14 md:leading-[0.9] text-6xl md:text-[100px] lg:text-[170px] xl:text-[220px]">
@@ -40,7 +51,7 @@ const HomePage = async ({ params }: PageProps<"/[locale]">) => {
               <Link href={"/about-us"}>{t("cta")}</Link>
             </Button>
             <Button size={"icon"}>
-              <ArrowUpRightIcon className="size-4 fill-primary-foreground" />
+              <ArrowIcon />
             </Button>
           </div>
         </div>
