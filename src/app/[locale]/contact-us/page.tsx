@@ -32,12 +32,20 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           alt="contact-us"
           width={1200}
           height={800}
-          className="absolute -top-10 -right-20 rtl:right-auto rtl:-left-20 rtl:-scale-x-100 h-80 w-100 object-cover object-top-left md:hidden"
+          className="absolute -top-20 -right-20 rtl:right-auto rtl:-left-20 rtl:-scale-x-100 h-80 w-100 object-cover object-top-left md:hidden"
         />
 
         <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
         <div className="fixed right-0 rtl:right-auto rtl:left-0 top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-160 h-full"></div>
       </div>
+
+      <Image
+        src={"/images/star.png"}
+        alt="star"
+        width={1200}
+        height={800}
+        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+      />
 
       <PanelContainer>
         <LeftPanel>
@@ -45,7 +53,7 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
             <h2 className="font-title text-[60px] md:text-[110px] leading-none">
               {t("title")}
             </h2>
-            <h1 className="font-title text-[20px] md:text-[70px] leading-none">
+            <h1 className="font-title text-[20px] md:text-[70px] leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-3">
               {t("subtitle")}
             </h1>
           </LeftPanelHeader>
