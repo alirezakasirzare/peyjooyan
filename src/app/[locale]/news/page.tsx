@@ -20,10 +20,10 @@ const NewsPage = async ({ params }: PageProps<"/[locale]/news">) => {
         alt="star"
         width={1200}
         height={800}
-        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+        className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
-      <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50">
+      <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50">
         <h2 className="font-title text-[60px] md:text-[80px] leading-none">
           {t("title")}
         </h2>

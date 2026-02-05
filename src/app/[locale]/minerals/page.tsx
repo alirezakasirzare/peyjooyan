@@ -18,7 +18,7 @@ const MineralsPage = async ({ params }: PageProps<"/[locale]/minerals">) => {
         alt="hero"
         width={1200}
         height={800}
-        className="w-full h-1/3 md:h-screen fixed top-0 left-0 object-cover"
+        className="w-full h-1/3 md:h-[100dvh] fixed top-0 left-0 object-cover"
       />
 
       <div className="fixed left-0 top-0 bg-linear-to-t from-black to-black/0 w-full h-full bottom-22 z-10 hidden md:block"></div>
@@ -30,10 +30,10 @@ const MineralsPage = async ({ params }: PageProps<"/[locale]/minerals">) => {
         alt="star"
         width={1200}
         height={800}
-        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+        className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
-      <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50">
+      <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50">
         <h2 className="font-title text-[60px] md:text-[60px] leading-none">
           {t("title")}
         </h2>

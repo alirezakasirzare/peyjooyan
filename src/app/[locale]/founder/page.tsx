@@ -39,7 +39,7 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
         alt="star"
         width={1200}
         height={800}
-        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+        className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
       <PanelContainer>

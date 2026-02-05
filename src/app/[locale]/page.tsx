@@ -19,10 +19,10 @@ const HomePage = async ({ params }: PageProps<"/[locale]">) => {
         alt="hero"
         width={1200}
         height={800}
-        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-cover"
+        className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-cover"
       />
 
-      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-screen bottom-0 hidden md:block"></div>
+      <div className="fixed left-0 bg-linear-to-t from-black to-black/0 w-full h-[100dvh] bottom-0 hidden md:block"></div>
       <div className="fixed top-0 left-0 bg-linear-to-t from-black to-black/0 w-full h-2/3 bottom-0 md:hidden"></div>
 
       <Image
@@ -30,7 +30,7 @@ const HomePage = async ({ params }: PageProps<"/[locale]">) => {
         alt="star"
         width={1200}
         height={800}
-        className="w-full h-2/3 md:h-screen fixed top-0 left-0 object-contain"
+        className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
       <div className="fixed left-1/2 bottom-26 -translate-x-1/2 w-full">

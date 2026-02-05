@@ -10,7 +10,7 @@ export const DesktopContent = () => {
   return (
     <div className="hidden lg:block px-20 w-[800px]">
       <ScrollArea
-        className="h-screen overflow-hidden"
+        className="h-[100dvh] overflow-hidden"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         scrollBarClassName="w-0"

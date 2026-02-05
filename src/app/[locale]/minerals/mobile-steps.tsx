@@ -94,7 +94,7 @@ export const MobileSteps = () => {
 
   return (
     <ScrollArea
-      className="h-[calc(100vh-300px)] overflow-hidden md:hidden"
+      className="h-[calc(100dvh-300px)] overflow-hidden md:hidden"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       scrollBarClassName="w-0"

@@ -44,12 +44,12 @@ export const RightPopupCard = ({
 
   return (
     <div
-      className="w-110 max-w-full fixed top-0 end-0 h-screen z-50"
+      className="w-110 max-w-full fixed top-0 end-0 h-[100dvh] z-50"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
       <LiquidGlassCardWrapper className="border-none" radius={0}>
-        <div className="w-110 max-w-full h-screen pt-6 md:pt-10">
+        <div className="w-110 max-w-full h-[100dvh] pt-6 md:pt-10">
           {children}
         </div>
       </LiquidGlassCardWrapper>

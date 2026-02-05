@@ -16,7 +16,7 @@ export const LeftPanel = ({
   return (
     <div
       className={cn(
-        "w-160 max-w-full pt-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-screen relative z-50",
+        "w-160 max-w-full pt-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50",
         className,
       )}
     >
