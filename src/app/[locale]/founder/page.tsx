@@ -12,6 +12,7 @@ import { Button } from "~/components/ui/button";
 import { FounderCta } from "./founder-cta";
 import { FounderPopupSection } from "./founder-popup-section";
 import { ArrowIcon } from "~/components/sections/arrow-icon";
+import { PageContainer } from "~/components/common/page-container";
 
 const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
   const { locale } = await params;
@@ -42,40 +43,42 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
         className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
-      <PanelContainer>
-        <LeftPanel className="gap-32 md:gap-0">
-          <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[90px] leading-none">
-              {t("title")}
-            </h2>
-            <h1 className="font-title text-lg md:text-[60px] rtl:md:text-[30px] text-primary leading-none -mt-1 md:-mt-3 rtl:mt-2 rtl:md:mt-1">
-              {t("subtitle")}
-            </h1>
-            <h3 className="font-title text-lg md:text-xl leading-none mt-1 rtl:mt-1 rtl:md:mt-1">
-              2012 | 2020
-            </h3>
-            <div className="flex gap-4 mt-2">
-              <FounderCta />
-              <Button size={"icon"} variant={"outline"}>
-                <ArrowIcon />
-              </Button>
-            </div>
-          </LeftPanelHeader>
-          <LeftPanelContent>
-            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
-              <p>{t("text1")}</p>
-              <p>{t("text2")}</p>
-              <p>{t("text3")}</p>
-              <p>{t("text4")}</p>
-            </div>
+      <PageContainer>
+        <PanelContainer>
+          <LeftPanel className="gap-32 md:gap-0">
+            <LeftPanelHeader>
+              <h2 className="font-title text-[60px] md:text-[90px] leading-none">
+                {t("title")}
+              </h2>
+              <h1 className="font-title text-lg md:text-[60px] rtl:md:text-[30px] text-primary leading-none -mt-1 md:-mt-3 rtl:mt-2 rtl:md:mt-1">
+                {t("subtitle")}
+              </h1>
+              <h3 className="font-title text-lg md:text-xl leading-none mt-1 rtl:mt-1 rtl:md:mt-1">
+                2012 | 2020
+              </h3>
+              <div className="flex gap-4 mt-2">
+                <FounderCta />
+                <Button size={"icon"} variant={"outline"}>
+                  <ArrowIcon />
+                </Button>
+              </div>
+            </LeftPanelHeader>
+            <LeftPanelContent>
+              <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
+                <p>{t("text1")}</p>
+                <p>{t("text2")}</p>
+                <p>{t("text3")}</p>
+                <p>{t("text4")}</p>
+              </div>
 
-            <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
-            <div className="h-[120px]"></div>
-          </LeftPanelContent>
-        </LeftPanel>
+              <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
+              <div className="h-[120px]"></div>
+            </LeftPanelContent>
+          </LeftPanel>
 
-        <FounderPopupSection />
-      </PanelContainer>
+          <FounderPopupSection />
+        </PanelContainer>
+      </PageContainer>
     </>
   );
 };

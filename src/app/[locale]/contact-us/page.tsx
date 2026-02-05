@@ -9,6 +9,7 @@ import {
 import { PanelContainer } from "~/components/common/panel-container";
 import { ConnectUsList } from "./connect-us-list";
 import { ContactUsPopupSection } from "./contact-us-popup-section";
+import { PageContainer } from "~/components/common/page-container";
 
 const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
   const { locale } = await params;
@@ -47,27 +48,29 @@ const ConnectUsPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
         className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
-      <PanelContainer>
-        <LeftPanel>
-          <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[110px] leading-none">
-              {t("title")}
-            </h2>
-            <h1 className="font-title text-[20px] md:text-[70px] leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-3">
-              {t("subtitle")}
-            </h1>
-          </LeftPanelHeader>
-          <LeftPanelContent>
-            <div className="pt-28 md:pt-0">
-              <ConnectUsList />
-              <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
-              <div className="h-[120px]"></div>
-            </div>
-          </LeftPanelContent>
-        </LeftPanel>
+      <PageContainer>
+        <PanelContainer>
+          <LeftPanel>
+            <LeftPanelHeader>
+              <h2 className="font-title text-[60px] md:text-[110px] leading-none">
+                {t("title")}
+              </h2>
+              <h1 className="font-title text-[20px] md:text-[70px] leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-3">
+                {t("subtitle")}
+              </h1>
+            </LeftPanelHeader>
+            <LeftPanelContent>
+              <div className="pt-28 md:pt-0">
+                <ConnectUsList />
+                <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
+                <div className="h-[120px]"></div>
+              </div>
+            </LeftPanelContent>
+          </LeftPanel>
 
-        <ContactUsPopupSection />
-      </PanelContainer>
+          <ContactUsPopupSection />
+        </PanelContainer>
+      </PageContainer>
     </>
   );
 };

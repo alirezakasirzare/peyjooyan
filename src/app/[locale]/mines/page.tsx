@@ -12,6 +12,7 @@ import { Button } from "~/components/ui/button";
 import { ReadMoreBtn } from "./read-more-btn";
 import { MinesPopupSection } from "./mines-popup-section";
 import { ArrowIcon } from "~/components/sections/arrow-icon";
+import { PageContainer } from "~/components/common/page-container";
 
 const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
   const { locale } = await params;
@@ -40,56 +41,58 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
         className="w-full h-2/3 md:h-[100dvh] fixed top-0 left-0 object-contain"
       />
 
-      <PanelContainer>
-        <LeftPanel>
-          <LeftPanelHeader>
-            <h2 className="font-title text-[60px] md:text-[110px] leading-none">
-              {t("title")}
-            </h2>
-            <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-6">
-              {t("subtitle")}
-            </h1>
-            <h3 className="font-title md:text-[30px] text-primary leading-none rtl:mt-3">
-              {t("subtitle2")}
-            </h3>
-          </LeftPanelHeader>
-          <LeftPanelContent>
-            <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
-              <p>{t("text1")}</p>
-              <p>{t("text2")}</p>
-              <p>{t("text3")}</p>
-              <p>{t("text4")}</p>
-              <p>{t("text5")}</p>
-              <p>{t("text6")}</p>
-              <p>{t("text7")}</p>
-              <p>{t("text8")}</p>
-              <p>{t("text9")}</p>
-              <p>{t("text10")}</p>
-              <p>{t("text11")}</p>
-              <p>{t("text12")}</p>
-              <p>{t("text13")}</p>
-            </div>
-            <Image
-              src={"/images/miner3.png"}
-              alt="miner"
-              width={1200}
-              height={800}
-              className="mx-auto w-1/3"
-            />
+      <PageContainer>
+        <PanelContainer>
+          <LeftPanel>
+            <LeftPanelHeader>
+              <h2 className="font-title text-[60px] md:text-[110px] leading-none">
+                {t("title")}
+              </h2>
+              <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-6">
+                {t("subtitle")}
+              </h1>
+              <h3 className="font-title md:text-[30px] text-primary leading-none rtl:mt-3">
+                {t("subtitle2")}
+              </h3>
+            </LeftPanelHeader>
+            <LeftPanelContent>
+              <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
+                <p>{t("text1")}</p>
+                <p>{t("text2")}</p>
+                <p>{t("text3")}</p>
+                <p>{t("text4")}</p>
+                <p>{t("text5")}</p>
+                <p>{t("text6")}</p>
+                <p>{t("text7")}</p>
+                <p>{t("text8")}</p>
+                <p>{t("text9")}</p>
+                <p>{t("text10")}</p>
+                <p>{t("text11")}</p>
+                <p>{t("text12")}</p>
+                <p>{t("text13")}</p>
+              </div>
+              <Image
+                src={"/images/miner3.png"}
+                alt="miner"
+                width={1200}
+                height={800}
+                className="mx-auto w-1/3"
+              />
 
-            <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
+              <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
 
-            <div className="flex gap-4 absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2">
-              <ReadMoreBtn />
-              <Button size={"icon"}>
-                <ArrowIcon />
-              </Button>
-            </div>
-          </LeftPanelContent>
-        </LeftPanel>
+              <div className="flex gap-4 absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2">
+                <ReadMoreBtn />
+                <Button size={"icon"}>
+                  <ArrowIcon />
+                </Button>
+              </div>
+            </LeftPanelContent>
+          </LeftPanel>
 
-        <MinesPopupSection />
-      </PanelContainer>
+          <MinesPopupSection />
+        </PanelContainer>
+      </PageContainer>
     </>
   );
 };
