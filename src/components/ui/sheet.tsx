@@ -72,6 +72,7 @@ function SheetContent({
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
           {
             "bg-background shadow-lg p-4 pt-10": !pureStyle,
+            "border-0": pureStyle,
           },
           className,
         )}

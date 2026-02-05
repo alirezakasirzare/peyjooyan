@@ -32,6 +32,7 @@ export const RightPopupCard = ({
             // padding="40px 0 0 0"
             radius={50}
             padding="0 0 40px 0"
+            className="border-0"
           >
             <div className="w-screen pb-10">{children}</div>
           </LiquidGlassCardWrapper>
