@@ -36,6 +36,7 @@ export const RightPanel = ({
             // padding="40px 0 0 0"
             radius={50}
             padding="0 0 40px 0"
+            className="border-0 shadow-sm shadow-white/30"
           >
             <div className="w-screen">{children}</div>
           </LiquidGlassCardWrapper>
