@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { ScrollArea } from "../ui/scroll-area";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
+import { motion, AnimatePresence } from "motion/react";
 
 export const RightPanel = ({
   children,
@@ -46,15 +47,22 @@ export const RightPanel = ({
     );
   }
 
-  if (!isOpen) return null;
-
   return (
-    <div
-      className="w-110 max-w-full pt-6 md:pt-10"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <div className="relative z-50 h-full">{children}</div>
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="right-panel"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="w-110 max-w-full pt-6 md:pt-10"
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
+        >
+          <div className="relative z-50 h-full">{children}</div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };

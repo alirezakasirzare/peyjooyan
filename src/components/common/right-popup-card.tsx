@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { useMenuScroll } from "~/hooks/use-menu-scroll";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
+import { motion, AnimatePresence } from "motion/react";
 
 export const RightPopupCard = ({
   children,
@@ -41,19 +42,26 @@ export const RightPopupCard = ({
     );
   }
 
-  if (!isOpen) return null;
-
   return (
-    <div
-      className="w-110 max-w-full fixed top-0 end-0 h-[100dvh] z-50"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <LiquidGlassCardWrapper className="border-none" radius={0}>
-        <div className="w-110 max-w-full h-[100dvh] pt-6 md:pt-10">
-          {children}
-        </div>
-      </LiquidGlassCardWrapper>
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="right-popup"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="w-110 max-w-full fixed top-0 end-0 h-[100dvh] z-50"
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
+        >
+          <LiquidGlassCardWrapper className="border-none" radius={0}>
+            <div className="w-110 max-w-full h-[100dvh] pt-6 md:pt-10">
+              {children}
+            </div>
+          </LiquidGlassCardWrapper>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
