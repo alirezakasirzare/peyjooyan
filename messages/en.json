@@ -63,7 +63,6 @@
     "title": "MINERALS",
     "subtitle": "PEYJOOYAN",
     "subtitle2": "THE MINERALS WE EXTRACT",
-    "rockText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY.",
     "readMoreBtn": "READ MORE",
     "step1": {
       "title": "LEAD AND ZINC",
@@ -80,10 +79,22 @@
       "cta": "VIEW IMAGES"
     },
     "steps": {
-      "step1": "LEAD AND ZINC",
-      "step2": "COPPER",
-      "step3": "INDUSTRIAL SOIL",
-      "step4": "POLYMETAL MINE"
+      "step1": {
+        "title": "LEAD AND ZINC",
+        "detailText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY."
+      },
+      "step2": {
+        "title": "COPPER",
+        "detailText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY."
+      },
+      "step3": {
+        "title": "INDUSTRIAL SOIL",
+        "detailText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY."
+      },
+      "step4": {
+        "title": "POLYMETAL MINE",
+        "detailText": "THE MAXIMUM AND AVERAGE LEAD ELEMENT GRADES ARE 9.7 AND 2.2 PERCENT, RESPECTIVELY."
+      }
     }
   },
   "ceo": {

@@ -1,58 +1,56 @@
 "use client";
 
-import { ArrowUpRightIcon } from "lucide-react";
-import { getTranslations } from "next-intl/server";
-import { Button } from "~/components/ui/button";
-import { cn } from "~/lib/utils";
-import { ReadMoreBtn } from "./read-more-btn";
+import { useStore } from "@tanstack/react-store";
 import Image from "next/image";
-import { ScrollArea } from "~/components/ui/scroll-area";
-import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 import { useTranslations } from "next-intl";
 import { ArrowIcon } from "~/components/sections/arrow-icon";
+import { Button } from "~/components/ui/button";
+import { ScrollArea } from "~/components/ui/scroll-area";
+import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
+import { cn } from "~/lib/utils";
+import { MineralsStore } from "./minerals-store";
+import { ReadMoreBtn } from "./read-more-btn";
 
-type NonActiveStepShape = {
-  isActive: false;
+type StepShape = {
+  title: string;
+  detailText: string;
 };
 
-type ActiveStepShape = {
-  isActive: true;
-  onAction: () => void;
-  moreLink: string;
-};
-
-type StepShape = { title: string } & (NonActiveStepShape | ActiveStepShape);
-
-const Step = (
-  data: StepShape & {
-    number: number;
-    isFirst?: boolean;
-    isLast?: boolean;
-  },
-) => {
-  const t = useTranslations("minerals");
-
+const Step = ({
+  title,
+  isActive,
+  number,
+  onClick,
+  detailText,
+}: StepShape & {
+  isActive: boolean;
+  number: number;
+  onClick: () => void;
+  isFirst?: boolean;
+  isLast?: boolean;
+  detailText?: string;
+}) => {
   return (
-    <li>
+    <li className="cursor-pointer" onClick={onClick}>
       <div className={"flex flex-row gap-4 items-center relative w-max"}>
         <div
           className={cn(
             "relative font-title size-8 border border-primary rounded-full text-foreground bg-background flex justify-center items-center z-10",
             {
-              "bg-primary text-primary-foreground": data.isActive,
-              "text-primary": !data.isActive,
+              "bg-primary text-primary-foreground": isActive,
+              "text-primary": !isActive,
             },
           )}
         >
-          {data.number}
+          {number}
         </div>
-        <div className="font-title text-primary">{data.title}</div>
+        <div className="font-title text-primary">{title}</div>
       </div>
 
-      {data.isActive && (
+      {isActive && (
         <div className="flex flex-col items-center gap-2 ps-10 pt-4">
           <p className="font-title text-sm rtl:font-text text-foreground/80">
-            {t("rockText")}
+            {detailText}
           </p>
           <Image
             src={"/images/rock.gif"}
@@ -80,17 +78,18 @@ const Step = (
 export const MobileSteps = () => {
   const t = useTranslations("minerals");
   const { handleEnter, handleLeave } = useNoNavigationWithScroll();
+  const { activeStepIndex } = useStore(MineralsStore);
+
   const items: StepShape[] = [
-    {
-      title: t("steps.step1"),
-      isActive: true,
-      moreLink: "/",
-      onAction: () => {},
-    },
-    { title: t("steps.step2"), isActive: false },
-    { title: t("steps.step3"), isActive: false },
-    { title: t("steps.step4"), isActive: false },
+    { title: t("steps.step1.title"), detailText: t("steps.step1.detailText") },
+    { title: t("steps.step2.title"), detailText: t("steps.step2.detailText") },
+    { title: t("steps.step3.title"), detailText: t("steps.step3.detailText") },
+    { title: t("steps.step4.title"), detailText: t("steps.step4.detailText") },
   ];
+
+  const handleStepClick = (index: number) => {
+    MineralsStore.setState((prev) => ({ ...prev, activeStepIndex: index }));
+  };
 
   return (
     <ScrollArea
@@ -105,8 +104,11 @@ export const MobileSteps = () => {
             key={i}
             {...item}
             number={i + 1}
+            isActive={activeStepIndex === i}
+            onClick={() => handleStepClick(i)}
             isFirst={i === 0}
             isLast={items.length - 1 === i}
+            detailText={item.detailText}
           />
         ))}
       </ul>

@@ -10,17 +10,21 @@ import { LiquidGlassBtnWrapper } from "~/components/sections/liquid-glass-btn-wr
 import { ScrollArea } from "~/components/ui/scroll-area";
 
 const Step1 = () => {
-  const t = useTranslations("minerals.step1");
+  const t = useTranslations("minerals");
+  const { activeStepIndex } = useStore(MineralsStore);
 
   const handleClickCTA = () => {
-    MineralsStore.setState({ step: 2 });
+    MineralsStore.setState((prev) => ({
+      step: 2,
+      activeStepIndex: prev.activeStepIndex,
+    }));
   };
 
   return (
     <>
       <div className="p-4 pt-8 md:pt-0! h-full flex flex-col gap-4">
         <h3 className="text-primary text-[34px] font-title leading-none text-center">
-          {t("title")}
+          {t(`steps.step${(activeStepIndex + 1) as 1 | 2 | 3 | 4}.title`)}
         </h3>
         <ScrollArea
           type="hover"
@@ -28,12 +32,12 @@ const Step1 = () => {
           scrollBarClassName="w-0"
         >
           <div className="text-foreground/80 text-justify font-extralight flex flex-col gap-3">
-            <p>{t("text1")}</p>
-            <p>{t("text2")}</p>
-            <p>{t("text3")}</p>
-            <p>{t("text4")}</p>
-            <p>{t("text5")}</p>
-            <p>{t("text6")}</p>
+            <p>{t("step1.text1")}</p>
+            <p>{t("step1.text2")}</p>
+            <p>{t("step1.text3")}</p>
+            <p>{t("step1.text4")}</p>
+            <p>{t("step1.text5")}</p>
+            <p>{t("step1.text6")}</p>
           </div>
         </ScrollArea>
 
@@ -45,7 +49,7 @@ const Step1 = () => {
               onClick={handleClickCTA}
               variant={"glass"}
             >
-              {t("cta")}
+              {t("step1.cta")}
             </Button>
           </LiquidGlassBtnWrapper>
         </div>
@@ -58,7 +62,10 @@ const Step2 = () => {
   const t = useTranslations("minerals.step2");
 
   const handleClickCTA = () => {
-    MineralsStore.setState({ step: 0 });
+    MineralsStore.setState((prev) => ({
+      step: 0,
+      activeStepIndex: prev.activeStepIndex,
+    }));
   };
   return (
     <div className="p-4 pt-8 md:pt-0! h-full flex flex-col gap-4">
@@ -103,7 +110,10 @@ export const MineralsPopupSection = () => {
   const CurrentStep = steps[step];
 
   const handleCloseSheet = () => {
-    MineralsStore.setState((prev) => ({ step: (prev.step - 1) as 0 | 1 }));
+    MineralsStore.setState((prev) => ({
+      step: (prev.step - 1) as 0 | 1,
+      activeStepIndex: prev.activeStepIndex,
+    }));
   };
 
   return (
