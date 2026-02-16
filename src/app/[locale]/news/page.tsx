@@ -3,7 +3,6 @@ import { Locale } from "next-intl";
 import { Slider } from "./slider";
 import { Button } from "~/components/ui/button";
 import { Link } from "~/i18n/navigation";
-import { ArrowUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import { ArrowIcon } from "~/components/sections/arrow-icon";
 import { PageContainer } from "~/components/common/page-container";
@@ -25,7 +24,7 @@ const NewsPage = async ({ params }: PageProps<"/[locale]/news">) => {
       />
 
       <PageContainer>
-        <div className="p-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50">
+        <div className="p-6 md:px-10 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50">
           <h2 className="font-title text-[60px] md:text-[80px] leading-none">
             {t("title")}
           </h2>

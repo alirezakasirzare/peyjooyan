@@ -28,12 +28,12 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
           alt="founder"
           width={1200}
           height={800}
-          className="absolute top-0 md:top-auto md:bottom-0 -end-13 md:end-0 w-80 md:w-160 rtl:-scale-x-100"
+          className="absolute top-0 md:top-auto md:bottom-0 -end-13 md:end-0 w-80 md:w-160 2xl:w-[30vw] rtl:-scale-x-100"
         />
         <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-1/2 pointer-events-none" />
       </div>
 
-      <div className="fixed end-0 top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-160 h-full"></div>
+      <div className="fixed end-0 top-0 bg-linear-to-r rtl:bg-linear-to-l from-black to-black/0 w-160 2xl:w-[30vw] h-full"></div>
 
       <Image
         src={"/images/star.png"}

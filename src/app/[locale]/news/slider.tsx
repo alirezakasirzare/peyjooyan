@@ -45,7 +45,9 @@ export const Slider = () => {
         {items.map((item, i) => (
           <SwiperSlide key={i} className="relative">
             <Link href={`/news/${item.id}`}>
-              {activeIndex !== i && (
+              {activeIndex === i ? (
+                <div className="absolute inset-0 bg-linear-to-t from-background/50 to-transparent"></div>
+              ) : (
                 <div className="absolute inset-0 bg-background/50"></div>
               )}
               <Image src={item.src} alt="workers" width={300} height={600} />

@@ -24,7 +24,7 @@ export const CeoCta = () => {
             alt="ceo"
             width={1200}
             height={800}
-            className="object-cover w-54 ms-auto md:w-96 rtl:-scale-x-100"
+            className="object-cover w-54 ms-auto md:w-96 2xl:w-[20vw] rtl:-scale-x-100"
           />
           <div className="md:hidden absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-full pointer-events-none" />
         </div>
@@ -74,12 +74,14 @@ export const CeoCta = () => {
                 span: (e) => <span className="text-primary">{e}</span>,
               })}
             </p>
-            <Button
-              onClick={handleClickCTA}
-              className="font-title px-4 mt-1 text-xs md:text-base"
-            >
-              {t("btn")}
-            </Button>
+            <div className="pe-4">
+              <Button
+                onClick={handleClickCTA}
+                className="font-title px-3 mt-1 h-7 text-xs md:text-base"
+              >
+                {t("btn")}
+              </Button>
+            </div>
           </div>
         </div>
       </div>

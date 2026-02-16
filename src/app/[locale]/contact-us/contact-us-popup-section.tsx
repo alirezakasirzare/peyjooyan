@@ -25,6 +25,7 @@ const Step1 = () => {
         <ScrollArea
           type="hover"
           className="grow h-[calc(100dvh-200px)] overflow-hidden"
+          viewportClassName="flex items-center"
           scrollBarClassName="w-0"
         >
           <ContactUsForm />

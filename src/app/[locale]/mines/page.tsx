@@ -51,7 +51,7 @@ const MinesPage = async ({ params }: PageProps<"/[locale]/mines">) => {
               <h1 className="font-title text-[60px] md:text-[120px] text-primary leading-none -mt-1 md:-mt-3 rtl:-mt-3 rtl:md:-mt-6">
                 {t("subtitle")}
               </h1>
-              <h3 className="font-title md:text-[30px] text-primary leading-none rtl:mt-3">
+              <h3 className="font-title md:text-[30px] leading-none rtl:mt-3">
                 {t("subtitle2")}
               </h3>
             </LeftPanelHeader>

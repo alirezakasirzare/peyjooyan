@@ -24,7 +24,7 @@ const FooterPage = async ({ params }: PageProps<"/[locale]/about-us">) => {
           alt="footer"
           width={1200}
           height={800}
-          className="w-100 h-full object-cover fixed bottom-0 right-0 rtl:right-auto rtl:left-0"
+          className="w-100 2xl:w-[30vw] h-full object-cover fixed bottom-0 right-0 rtl:right-auto rtl:left-0"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black to-black/0 w-full h-full pointer-events-none" />
       </div>

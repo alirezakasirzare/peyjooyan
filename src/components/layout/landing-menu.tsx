@@ -106,6 +106,7 @@ export const LandingMenu = () => {
   return (
     <>
       <motion.div
+        initial={{ opacity: 0, x: -50, y: 50 }}
         animate={{
           opacity: isOpen ? 1 : 0,
           x: isOpen ? 0 : -50,
@@ -127,6 +128,7 @@ export const LandingMenu = () => {
       <div className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 w-min">
         <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
           <motion.div
+            initial={false}
             animate={{
               opacity: isOpen ? 0 : 1,
               scale: isOpen ? 0.8 : 1,
@@ -144,6 +146,7 @@ export const LandingMenu = () => {
           </motion.div>
 
           <motion.div
+            initial={false}
             animate={{
               opacity: isOpen ? 0 : 1,
               scale: isOpen ? 0.8 : 1,

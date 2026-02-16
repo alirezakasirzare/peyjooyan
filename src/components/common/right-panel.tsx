@@ -3,7 +3,6 @@
 import { useIsMobile } from "~/hooks/use-is-mobile";
 import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
-import { ScrollArea } from "../ui/scroll-area";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -56,11 +55,15 @@ export const RightPanel = ({
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="w-110 max-w-full pt-6 md:pt-10"
+          className="w-110 2xl:w-[30vw] max-w-full fixed top-0 end-0 h-dvh z-50"
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
         >
-          <div className="relative z-50 h-full">{children}</div>
+          <LiquidGlassCardWrapper className="border-none" radius={0}>
+            <div className="w-110 2xl:w-[30vw] max-w-full h-dvh pt-6 md:pt-10">
+              <div className="relative z-50 h-full">{children}</div>
+            </div>
+          </LiquidGlassCardWrapper>
         </motion.div>
       )}
     </AnimatePresence>
