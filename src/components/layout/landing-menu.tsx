@@ -17,7 +17,7 @@ import { useStore } from "@tanstack/react-store";
 import { menuStore } from "~/store/menu-store";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import { cn } from "~/lib/utils";
+import { motion } from "motion/react";
 
 export const Menu = () => {
   const isMobile = useIsMobile();
@@ -65,14 +65,20 @@ export const Menu = () => {
         className="z-100"
       >
         <LiquidGlassCardWrapper>
-          <div className="flex flex-col gap-2 py-6">
+          <motion.div
+            initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col gap-2 py-6"
+          >
             {items
               .filter((item) => !item.hide)
-              .map((item) => (
+              .map((item, index) => (
                 <Link
                   href={item.path}
-                  key={item.path}
                   onClick={handleCloseMenu}
+                  key={item.path}
                 >
                   <DropdownMenuItem
                     pureStyle
@@ -82,7 +88,7 @@ export const Menu = () => {
                   </DropdownMenuItem>
                 </Link>
               ))}
-          </div>
+          </motion.div>
         </LiquidGlassCardWrapper>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -99,38 +105,67 @@ export const LandingMenu = () => {
 
   return (
     <>
-      {isOpen && (
+      <motion.div
+        animate={{
+          opacity: isOpen ? 1 : 0,
+          x: isOpen ? 0 : -50,
+          y: isOpen ? 0 : 50,
+          pointerEvents: isOpen ? "auto" : "none",
+        }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute left-0 bottom-0 z-500"
+      >
         <Image
           src={"/images/miner.png"}
           alt="hero"
           width={1200}
           height={800}
-          className="absolute left-0 bottom-0 w-[55vw] md:w-[28vw] z-500"
+          className="w-[55vw] md:w-[28vw]"
         />
-      )}
+      </motion.div>
 
       <div className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 w-min">
         <div className="flex gap-5 justify-center rtl:flex-row-reverse items-center h-full">
-          <LiquidGlassBtnWrapper
-            className={cn({ "invisible opacity-0": isOpen })}
+          <motion.div
+            animate={{
+              opacity: isOpen ? 0 : 1,
+              scale: isOpen ? 0.8 : 1,
+              pointerEvents: isOpen ? "none" : "auto",
+            }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Button variant={"glass"} size={"icon-lg"} asChild>
-              <Link href={pathname} locale={otherLocale}>
-                <LanguagesIcon className="size-4" />
-              </Link>
-            </Button>
-          </LiquidGlassBtnWrapper>
-          <LiquidGlassBtnWrapper
-            className={cn({ "invisible opacity-0": isOpen })}
+            <LiquidGlassBtnWrapper>
+              <Button variant={"glass"} size={"icon-lg"} asChild>
+                <Link href={pathname} locale={otherLocale}>
+                  <LanguagesIcon className="size-4" />
+                </Link>
+              </Button>
+            </LiquidGlassBtnWrapper>
+          </motion.div>
+
+          <motion.div
+            animate={{
+              opacity: isOpen ? 0 : 1,
+              scale: isOpen ? 0.8 : 1,
+              pointerEvents: isOpen ? "none" : "auto",
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 0.05,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <Button
-              variant={"glass"}
-              className="font-medium font-text font-title rtl:font-text"
-              size={"lg"}
-            >
-              {activeItem?.text || parentItem?.text}
-            </Button>
-          </LiquidGlassBtnWrapper>
+            <LiquidGlassBtnWrapper>
+              <Button
+                variant={"glass"}
+                className="font-medium font-text font-title rtl:font-text"
+                size={"lg"}
+              >
+                {activeItem?.text || parentItem?.text}
+              </Button>
+            </LiquidGlassBtnWrapper>
+          </motion.div>
+
           <LiquidGlassBtnWrapper>
             <Menu />
           </LiquidGlassBtnWrapper>
