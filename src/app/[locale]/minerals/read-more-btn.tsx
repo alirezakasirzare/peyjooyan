@@ -8,7 +8,10 @@ export const ReadMoreBtn = () => {
   const t = useTranslations("minerals");
 
   const handleClick = () => {
-    MineralsStore.setState({ step: 1 });
+    MineralsStore.setState((prev) => ({
+      step: 1,
+      activeStepIndex: prev.activeStepIndex,
+    }));
   };
 
   return (
