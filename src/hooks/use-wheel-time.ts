@@ -8,7 +8,6 @@ export const useWheelTime = (cb: (to: WheelTo) => void) => {
 
   useEffect(() => {
     window.addEventListener("wheel", (e) => {
-      console.log(e);
       toRef.current = e.deltaY > 0 ? "bottom" : "top";
       if (timeoutRef.current !== false) {
         clearTimeout(timeoutRef.current);
