@@ -2,9 +2,10 @@
 
 import { useIsMobile } from "~/hooks/use-is-mobile";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
-import { useMenuScroll } from "~/hooks/use-menu-scroll";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 import { motion, AnimatePresence } from "motion/react";
+import { createPortal } from "react-dom";
+import { useHasMounted } from "~/hooks/use-has-mounted";
 
 export const RightPopupCard = ({
   children,
@@ -17,8 +18,11 @@ export const RightPopupCard = ({
 }) => {
   const isMobile = useIsMobile();
   const { handleEnter, handleLeave } = useNoNavigationWithScroll();
+  const mounted = useHasMounted();
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -65,12 +69,12 @@ export const RightPopupCard = ({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="w-110 max-w-full fixed top-0 end-0 h-[100dvh] z-50"
+              className="w-110 max-w-full fixed top-0 end-0 h-dvh z-50"
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}
             >
               <LiquidGlassCardWrapper className="border-none" radius={0}>
-                <div className="w-110 max-w-full h-[100dvh] pt-6 md:pt-10">
+                <div className="w-110 max-w-full h-dvh pt-6 md:pt-10">
                   {children}
                 </div>
               </LiquidGlassCardWrapper>
@@ -78,6 +82,7 @@ export const RightPopupCard = ({
           )}
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 };

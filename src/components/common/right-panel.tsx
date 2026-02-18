@@ -4,6 +4,8 @@ import { useIsMobile } from "~/hooks/use-is-mobile";
 import { LiquidGlassCardWrapper } from "../sections/liquid-glass-card-wrapper";
 import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll";
 import { motion, AnimatePresence } from "motion/react";
+import { createPortal } from "react-dom";
+import { useHasMounted } from "~/hooks/use-has-mounted";
 
 export const RightPanel = ({
   children,
@@ -16,7 +18,11 @@ export const RightPanel = ({
 }) => {
   const isMobile = useIsMobile();
   const { handleEnter, handleLeave } = useNoNavigationWithScroll();
-  return (
+  const mounted = useHasMounted();
+
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -76,6 +82,7 @@ export const RightPanel = ({
           )}
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 };
