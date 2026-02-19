@@ -72,7 +72,7 @@ const FounderPage = async ({ params }: PageProps<"/[locale]/founder">) => {
               </div>
 
               <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
-              <div className="h-[120px]"></div>
+              <div className="h-[30px] md:h-[120px]"></div>
             </LeftPanelContent>
           </LeftPanel>
 

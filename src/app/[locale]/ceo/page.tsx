@@ -54,8 +54,8 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
 
       <PageContainer>
         <PanelContainer>
-          <LeftPanel className="gap-32 md:gap-0">
-            <LeftPanelHeader>
+          <LeftPanel className="gap-32 md:gap-0 static z-auto">
+            <LeftPanelHeader className="relative z-51">
               <h2 className="font-title text-[60px] md:text-[100px] leading-none">
                 {t("title")}
               </h2>
@@ -69,7 +69,7 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
                 <SocialMedia />
               </div>
             </LeftPanelHeader>
-            <LeftPanelContent>
+            <LeftPanelContent className="relative z-50">
               <div className="text-foreground/60 text-justify font-extralight flex flex-col gap-3">
                 <p>{t("text1")}</p>
                 <p>{t("text2")}</p>
@@ -78,7 +78,7 @@ const CeoPage = async ({ params }: PageProps<"/[locale]/ceo">) => {
               </div>
 
               <div className="fixed left-0 right-0 bottom-0 h-[120px] bg-linear-to-t from-black/75 via-black/60 to-transparent" />
-              <div className="h-[120px]"></div>
+              <div className="h-[30px] md:h-[120px]"></div>
             </LeftPanelContent>
           </LeftPanel>
           <CeoPopupSection />

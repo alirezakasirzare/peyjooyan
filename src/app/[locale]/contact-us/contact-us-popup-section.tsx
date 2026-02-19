@@ -24,7 +24,7 @@ const Step1 = () => {
       <div className="mt-6">
         <ScrollArea
           type="hover"
-          className="grow h-[calc(100dvh-200px)] overflow-hidden"
+          className="grow h-[50vh] md:h-[calc(100dvh-200px)] overflow-hidden"
           viewportClassName="flex items-center"
           scrollBarClassName="w-0"
         >

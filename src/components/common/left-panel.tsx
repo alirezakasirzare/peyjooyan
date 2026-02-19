@@ -16,8 +16,8 @@ export const LeftPanel = ({
   return (
     <div
       className={cn(
-        "w-160 max-w-full pt-6 md:pt-10 pb-10 md:pb-0 flex flex-col max-h-[100dvh] relative z-50",
-        className,
+        "w-160 max-w-full pt-6 md:pt-10 flex flex-col max-h-[100dvh] relative z-50",
+        className
       )}
     >
       {children}
@@ -27,10 +27,12 @@ export const LeftPanel = ({
 
 export const LeftPanelHeader = ({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className?: string;
 }) => {
-  return <div className="px-6 md:px-10 pb-4">{children}</div>;
+  return <div className={cn("px-6 md:px-10 pb-4", className)}>{children}</div>;
 };
 
 export const LeftPanelContent = ({
@@ -49,7 +51,7 @@ export const LeftPanelContent = ({
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <div className="px-6 md:px-10 relative">{children}</div>
+      <div className="pb-16 md:pb-0 px-6 md:px-10 relative">{children}</div>
     </ScrollArea>
   );
 };

@@ -69,12 +69,12 @@ export const RightPanel = ({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="w-110 2xl:w-[30vw] max-w-full fixed top-0 end-0 h-dvh z-50"
+              className="w-110 2xl:w-[29vw] max-w-full fixed top-0 end-0 h-dvh z-50"
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}
             >
               <LiquidGlassCardWrapper className="border-none" radius={0}>
-                <div className="w-110 2xl:w-[30vw] max-w-full h-dvh pt-6 md:pt-10">
+                <div className="w-110 2xl:w-[29vw] max-w-full h-dvh pt-6 md:pt-10">
                   <div className="relative z-50 h-full">{children}</div>
                 </div>
               </LiquidGlassCardWrapper>
@@ -83,6 +83,6 @@ export const RightPanel = ({
         </>
       )}
     </AnimatePresence>,
-    document.body,
+    document.body
   );
 };

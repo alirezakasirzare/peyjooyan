@@ -39,7 +39,7 @@ const Step = ({
             {
               "bg-primary text-primary-foreground": isActive,
               "text-primary": !isActive,
-            },
+            }
           )}
         >
           {number}
@@ -93,12 +93,12 @@ export const MobileSteps = () => {
 
   return (
     <ScrollArea
-      className="h-[calc(100dvh-300px)] overflow-hidden md:hidden"
+      className="h-[calc(100dvh-130px)] md:h-[calc(100dvh-300px)] overflow-hidden md:hidden"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       scrollBarClassName="w-0"
     >
-      <ul className="flex flex-col gap-4 before:content-[''] before:absolute before:start-4 before:h-[calc(100%-20px)] before:top-1/2 before:-translate-1/2 before:bottom-0 before:w-px before:bg-primary relative">
+      <ul className="flex flex-col gap-4 before:content-[''] before:absolute before:start-4 before:h-[calc(100%-20px)] before:top-1/2 before:-translate-1/2 before:bottom-0 before:w-px before:bg-primary relative pb-28">
         {items.map((item, i) => (
           <Step
             key={i}
