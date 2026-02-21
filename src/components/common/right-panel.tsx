@@ -6,6 +6,7 @@ import { useNoNavigationWithScroll } from "~/hooks/use-no-navigation-with-scroll
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
 import { useHasMounted } from "~/hooks/use-has-mounted";
+import { useLocale } from "next-intl";
 
 export const RightPanel = ({
   children,
@@ -19,6 +20,9 @@ export const RightPanel = ({
   const isMobile = useIsMobile();
   const { handleEnter, handleLeave } = useNoNavigationWithScroll();
   const mounted = useHasMounted();
+
+  const locale = useLocale();
+  const isRtl = locale === "fa";
 
   if (!mounted) return null;
 
@@ -65,9 +69,9 @@ export const RightPanel = ({
           ) : (
             <motion.div
               key="right-panel"
-              initial={{ x: "100%" }}
+              initial={{ x: isRtl ? "-100%" : "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: isRtl ? "-100%" : "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="w-110 2xl:w-[29vw] max-w-full fixed top-0 end-0 h-dvh z-50"
               onMouseEnter={handleEnter}
@@ -83,6 +87,6 @@ export const RightPanel = ({
         </>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 };

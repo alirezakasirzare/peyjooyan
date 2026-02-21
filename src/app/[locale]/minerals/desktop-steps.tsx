@@ -42,13 +42,13 @@ const Step = ({
     >
       {isActive && (
         <>
-          <div className="absolute flex flex-col items-center gap-4 bottom-20 left-0">
+          <div className="absolute flex flex-col items-center gap-4 bottom-20 start-0 w-max">
             <Image
               src={"/images/rock.gif"}
               alt="rock"
               width={400}
               height={400}
-              className="object-contain w-[220px] -ms-80"
+              className="object-contain w-[220px] -ms-80 rtl:-ms-30"
             />
             <p className="font-title text-sm rtl:font-text ps-14 rtl:ps-9 text-foreground/80">
               {detailText}

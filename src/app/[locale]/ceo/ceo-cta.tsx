@@ -77,7 +77,14 @@ export const CeoCta = () => {
               alt="cloud"
               width={100}
               height={100}
-              className="w-full -scale-x-100 md:scale-x-100 rtl:scale-x-100 rtl:md:-scale-x-100"
+              className="md:hidden w-full -scale-x-100 md:scale-x-100 rtl:scale-x-100 rtl:md:-scale-x-100"
+            />
+            <Image
+              src={"/images/cloud2.svg"}
+              alt="cloud"
+              width={100}
+              height={100}
+              className="hidden md:block w-full -scale-x-100 md:scale-x-100 rtl:scale-x-100 rtl:md:-scale-x-100"
             />
             <div className="absolute left-1/2 top-1/2 -translate-1/2">
               <p className="font-title text-[10px] md:text-[17px]">
