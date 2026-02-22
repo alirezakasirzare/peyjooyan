@@ -3,20 +3,44 @@ import { useEffect, useRef } from "react";
 type WheelTo = "top" | "bottom";
 
 export const useWheelTime = (cb: (to: WheelTo) => void) => {
-  const timeoutRef = useRef<NodeJS.Timeout | false>(false);
-  const toRef = useRef<WheelTo>("bottom");
+  const accumulatedDelta = useRef(0);
+  const locked = useRef(false);
+
+  const THRESHOLD = 120; // sensitivity
 
   useEffect(() => {
-    window.addEventListener("wheel", (e) => {
-      toRef.current = e.deltaY > 0 ? "bottom" : "top";
-      if (timeoutRef.current !== false) {
-        clearTimeout(timeoutRef.current);
+    const handleWheel = (e: WheelEvent) => {
+      if (locked.current) return;
+
+      accumulatedDelta.current += e.deltaY;
+
+      // scroll to bottom
+      if (accumulatedDelta.current >= THRESHOLD) {
+        locked.current = true;
+        cb("bottom");
+        reset();
       }
 
-      timeoutRef.current = setTimeout(() => {
-        cb(toRef.current);
-        timeoutRef.current = false;
-      }, 300);
-    });
+      // scroll to top
+      if (accumulatedDelta.current <= -THRESHOLD) {
+        locked.current = true;
+        cb("top");
+        reset();
+      }
+    };
+
+    const reset = () => {
+      accumulatedDelta.current = 0;
+
+      setTimeout(() => {
+        locked.current = false;
+      }, 1000); // lock time
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
   }, [cb]);
 };
