@@ -1,8 +1,5 @@
 import { usePathname, useRouter } from "~/i18n/navigation";
-import { useWheelTime } from "./use-wheel-time";
 import { MenuItemShape, useMenu } from "./use-menu";
-import { menuStore } from "~/store/menu-store";
-import { scrollStore } from "~/store/scroll-store";
 import { useEffect } from "react";
 
 export const findNextPrevPathname = (

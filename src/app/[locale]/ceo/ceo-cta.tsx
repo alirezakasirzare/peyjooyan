@@ -86,13 +86,13 @@ export const CeoCta = () => {
               height={100}
               className="hidden md:block w-full -scale-x-100 md:scale-x-100 rtl:scale-x-100 rtl:md:-scale-x-100"
             />
-            <div className="absolute left-1/2 top-1/2 -translate-1/2">
-              <p className="font-title text-[10px] md:text-[17px]">
+            <div className="absolute left-1/2 top-1/2 -translate-1/2 md:-translate-x-[45%] md:rtl:-translate-x-[55%] md:-translate-y-[65%]">
+              <p className="font-title text-[10px] md:text-[13px]">
                 {t.rich("title", {
                   span: (e) => <span className="text-primary">{e}</span>,
                 })}
               </p>
-              <div className="pe-4">
+              <div className="pe-4 mt-1">
                 <Button
                   onClick={handleClickCTA}
                   className="font-title px-3 mt-1 h-7 text-xs md:text-base"

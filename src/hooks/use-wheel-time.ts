@@ -16,7 +16,7 @@ export const useWheelTime = (cb: (to: WheelTo) => void) => {
       timeoutRef.current = setTimeout(() => {
         cb(toRef.current);
         timeoutRef.current = false;
-      }, 100);
+      }, 300);
     });
   }, [cb]);
 };
